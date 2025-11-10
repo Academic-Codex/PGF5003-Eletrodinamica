@@ -1,0 +1,572 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}       % Codificação UTF-8
+\usepackage[brazil]{babel}        % Hífen e separação silábica em Português
+\usepackage{amsmath, amssymb}       % Pacotes para matemática
+\usepackage{fancyhdr}             % Personalização de cabeçalhos/rodapés
+\usepackage{lastpage}             % Permite referenciar o número da última página
+\usepackage{geometry}             % Ajusta as margens
+\geometry{left=2cm, right=2cm, top=2.5cm, bottom=2cm}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+% Configuração do cabeçalho e rodapé
+\pagestyle{fancy}
+\fancyhf{} % Limpa os campos padrão
+% Cabeçalho: cada informação em nova linha
+
+
+
+\fancyhead[R]{
+  Aluna: Nara Ávila Moraes \\
+  Número USP: 5716734 \\
+
+}
+\fancyhead[L]{
+  Professora: Ivone Freire Mota de Albuquerque\\
+  Disciplina: Eletrodinâmica Clássica I \\
+  Prova 01 - 25 de abril de 2025 
+  \vspace{1pt}
+}
+
+\setlength{\headheight}{30pt}  % altura do cabeçalho
+\setlength{\headsep}{1.2cm}    % distância entre cabeçalho e texto
+\setlength{\footskip}{0cm}
+
+% Rodapé com numeração no formato página/total
+\fancyfoot[C]{\thepage/\pageref{LastPage}}
+
+\begin{document}
+
+\begin{center}
+  \Large\textbf{Formulário de Eletrodinâmica}\\[0.5cm]
+  % Você pode adicionar mais informações se necessário.
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Página 1: Cálculo Vetorial
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection*{Produto Interno}
+\begin{align*}
+\vec{A} &= A_x \hat{x} + A_y \hat{y} + A_z \hat{z} \\
+\vec{B} &= B_x \hat{x} + B_y \hat{y} + B_z \hat{z} \\
+\vec{A} \cdot \vec{B} &= A_x B_x + A_y B_y + A_z B_z = \lVert \vec{A} \rVert \lVert \vec{B} \rVert \cos \theta
+\end{align*}
+
+\subsection*{Produto Vetorial e Anticomutatividade}
+\begin{align*}
+\vec{A} \times \vec{B} &= \vec{C} \\
+\lVert \vec{C} \rVert &= \lVert \vec{A} \rVert \lVert \vec{B} \rVert \sin \theta \\
+\vec{B} \times \vec{A} &= -\vec{A} \times \vec{B}
+\end{align*}
+
+\subsection*{Notação de Einstein e Tensores}
+\begin{itemize}
+    \item Soma implícita sobre \textit{índices repetidos}:
+    \(
+    A_i B_i = \sum_i A_i B_i
+    \)
+    \item Produto vetorial com símbolo de Levi-Civita:
+    \(
+    (\vec{A} \times \vec{B})_i = \varepsilon_{ijk} A_j B_k
+    \)
+\end{itemize}
+
+\subsection*{Rotações e Matrizes de Transformação}
+\begin{align*}
+\text{Em 2D: }\begin{pmatrix} A'_x \\ A'_y \end{pmatrix} &=
+\begin{pmatrix} \cos\theta & \sin\theta \\ -\sin\theta & \cos\theta \end{pmatrix}
+\begin{pmatrix} A_x \\ A_y \end{pmatrix} \\
+\text{Em 3D: } \begin{pmatrix} A'_x \\ A'_y \\ A'_z \end{pmatrix} &=
+\begin{pmatrix} \cos\theta & \sin\theta & 0 \\ -\sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{pmatrix}
+\begin{pmatrix} A_x \\ A_y \\ A_z \end{pmatrix}
+\end{align*}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Página 1: Definicoes 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Cálculo: Derivadas e Integrais}
+
+\subsection*{Derivadas}
+\noindent Definição:
+\[
+\frac{d}{dx} f(x) = \lim_{\Delta x \to 0} \frac{f(x+\Delta x)-f(x)}{\Delta x}
+\]
+Regras importantes:
+\begin{itemize}
+  \item \textbf{Produto:} \(\displaystyle (fg)' = f'g + fg'\)
+  \item \textbf{Cadeia:} \(\displaystyle \frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x)\)
+  \item \textbf{Quociente:} \(\displaystyle \left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}\)
+\end{itemize}
+
+\subsection*{Integrais}
+Integral indefinida:
+\[
+\int f(x)\,dx
+\]
+Alguns resultados e técnicas:
+\begin{itemize}
+  \item \textbf{Integral definida:} \(\displaystyle \int_{a}^{b} f(x)\,dx\)
+  \item \textbf{Integração por partes:} \(\displaystyle \int u\,dv = uv - \int v\,du\)
+\end{itemize}
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Página 2: Operadores Diferenciais e Coordenadas
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Operadores Diferenciais}
+
+\subsection*{Laplaciano em Coordenadas Cartesianas}
+\[
+\nabla^2 f = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2}
+\]
+
+\subsection*{Laplaciano em Coordenadas Esféricas}
+Para uma função \(f(r,\theta,\phi)\):
+\[
+\nabla^2 f = \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2 \frac{\partial f}{\partial r}\right)
++ \frac{1}{r^2 \sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta \frac{\partial f}{\partial \theta}\right)
++ \frac{1}{r^2 \sin^2\theta}\frac{\partial^2 f}{\partial \phi^2}
+\]
+
+\subsection*{Coordenadas Esféricas}
+Relação entre coordenadas cartesianas e esféricas:
+\[
+\begin{aligned}
+x &= r \sin\theta \cos\phi,\\[0.2cm]
+y &= r \sin\theta \sin\phi,\\[0.2cm]
+z &= r \cos\theta.
+\end{aligned}
+\]
+
+\subsection*{Elementos diferenciais em coordenadas esféricas}
+
+\[
+d\vec{l} = dr\, \hat{r} + r\, d\theta\, \hat{\theta} + r \sin\theta\, d\phi\, \hat{\phi}
+\]
+
+\[
+d\vec{A} = r^2 \sin\theta\, d\theta\, d\phi\, \hat{r}
+\]
+
+\[
+dV = r^2 \sin\theta\, dr\, d\theta\, d\phi
+\]
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Página 3: Geometria
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{center}
+  {\Large \textbf{Formulário de Derivadas e Integrais}}
+\end{center}
+
+\vspace{1em}  % Pequeno espaço vertical
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+  \section*{Derivadas}
+
+  Sejam \(u\) e \(v\) funções deriváveis de \(x\) e \(n\) uma constante.
+
+  1. \(y = uv \;\;\;\Rightarrow\;\; y' = u'v + uv'\)
+
+  2. \(y = u^n \;\;\;\Rightarrow\;\; y' = n\,u^{\,n-1} \, u'\)
+
+  3. \(y = e^u \;\;\;\Rightarrow\;\; y' = e^u \,u'\)
+
+  4. \(y = a^u \;\;\;\Rightarrow\;\; y' = a^u \,\ln(a)\, u'\)
+
+  5. \(y = \ln(u) \;\;\;\Rightarrow\;\; y' = \frac{u'}{u}\)
+
+  6. \(y = \log_a(u) \;\;\;\Rightarrow\;\; y' = \frac{u'}{u \,\ln(a)}\)
+
+  7. \(y = \sin(u) \;\;\;\Rightarrow\;\; y' = \cos(u)\,u'\)
+
+  8. \(y = \cos(u) \;\;\;\Rightarrow\;\; y' = -\sin(u)\,u'\)
+
+  9. \(y = \tan(u) \;\;\;\Rightarrow\;\; y' = \sec^2(u)\,u'\)
+
+  10. \(y = \cot(u) \;\;\;\Rightarrow\;\; y' = -\csc^2(u)\,u'\)
+
+  11. \(y = \sec(u) \;\;\;\Rightarrow\;\; y' = \sec(u)\,\tan(u)\,u'\)
+
+  12. \(y = \csc(u) \;\;\;\Rightarrow\;\; y' = -\csc(u)\,\cot(u)\,u'\)
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+  \section*{Integrais}
+
+  1. \(\displaystyle \int du = u + C.\)
+
+  2. \(\displaystyle \int u^n\,du = \frac{u^{n+1}}{n+1} + C, \quad n \neq -1.\)
+
+  3. \(\displaystyle \int \frac{du}{u} = \ln|u| + C.\)
+
+  4. \(\displaystyle \int a^u\,du = \frac{a^u}{\ln(a)} + C.\)
+
+  5. \(\displaystyle \int e^u\,du = e^u + C.\)
+
+  6. \(\displaystyle \int \sin(u)\,du = -\cos(u) + C.\)
+
+  7. \(\displaystyle \int \cos(u)\,du = \sin(u) + C.\)
+
+  8. \(\displaystyle \int \sec^2(u)\,du = \tan(u) + C.\)
+
+  9. \(\displaystyle \int \csc^2(u)\,du = -\cot(u) + C.\)
+
+  10. \(\displaystyle \int \sec(u)\,\tan(u)\,du = \sec(u) + C.\)
+
+  11. \(\displaystyle \int \csc(u)\,\cot(u)\,du = -\csc(u) + C.\)
+
+  12. \(\displaystyle \int \tan(u)\,du = -\ln|\cos(u)| + C.\)
+
+  13. \(\displaystyle \int \cot(u)\,du = \ln|\sin(u)| + C.\)
+
+  14. \(\displaystyle \int \sec(u)\,du = \ln|\sec(u) + \tan(u)| + C.\)
+
+  15. \(\displaystyle \int \csc(u)\,du = -\ln|\csc(u) + \cot(u)| + C.\)
+\end{minipage}
+
+\section*{Geometria}
+
+\subsection*{Círculo}
+\begin{itemize}
+  \item Área do círculo: \(\displaystyle A = \pi r^2\)
+  \item Comprimento do círculo: \(\displaystyle C = 2\pi r\)
+\end{itemize}
+
+\subsection*{Esfera}
+\begin{itemize}
+  \item Área da esfera: \(\displaystyle A = 4\pi r^2\)
+  \item Volume da esfera: \(\displaystyle V = \frac{4}{3}\pi r^3\)
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Página 3: Simetrias
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section*{Lei de Coulomb}
+
+\begin{itemize}
+    \item Força entre duas cargas: \( \vec{F} = \frac{1}{4\pi \varepsilon_0} \frac{qQ}{R^2} \hat{R} \)
+    \item Campo elétrico gerado por uma carga: \( \vec{E}(\vec{r}) = \frac{1}{4\pi \varepsilon_0} \int \frac{\hat{R}}{R^2} dq \)
+\end{itemize}
+
+\subsection*{Distribuições de carga}
+\begin{itemize}
+    \item Linear: \( dq = \lambda dl \)
+    \item Superficial: \( dq = \sigma dS \)
+    \item Volumétrica: \( dq = \rho dV \)
+\end{itemize}
+
+\subsection*{Função Delta de Dirac}
+
+\begin{itemize}
+    \item Propriedade fundamental:
+    \[ \int_{-\infty}^{\infty} f(x) \delta(x - a) dx = f(a) \]
+    \item Em 3D: \( \delta^3(\vec{r}) = \delta(x)\delta(y)\delta(z) \)
+    \item Aparece como representação de cargas pontuais.
+\end{itemize}
+
+\subsection*{Equações de Maxwell}
+
+
+\subsection*{Equações de Maxwell - Eletrostática}
+
+\subsection*{Equações de Maxwell - Eletrostática}
+
+\begin{align*}
+    \vec{E} &= -\nabla \phi \\
+    \nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
+    \nabla \times \vec{E} &= 0 \quad \Rightarrow \quad \oint \vec{E} \cdot d\vec{l} = 0 \\
+    \nabla^2 \phi &= -\frac{\rho}{\varepsilon_0} \quad \text{(com carga)} \\
+    \nabla^2 \phi &= 0 \quad \text{(sem carga)}
+\end{align*}
+
+\subsection*{Potencial expresso pelos polinômios de Legendre}
+\begin{equation*}
+V(r, \theta, \phi) = \sum_{\ell=0}^{\infty} \sum_{m=-\ell}^{\ell} \left( A_{\ell m} \, r^{\ell} + \frac{B_{\ell m}}{r^{\ell+1}} \right) Y_{\ell}^{m}(\theta, \phi)
+\end{equation*}
+
+\subsection*{Potencial expresso pelos esféricos harmônicos}
+\begin{equation*}
+V(r, \theta) = \sum_{\ell=0}^{\infty} \left( A_{\ell} \, r^{\ell} + \frac{B_{\ell}}{r^{\ell+1}} \right) P_{\ell}(\cos \theta)
+\end{equation*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Página 3: Simetrias
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section*{Simetrias}
+
+\begin{center}
+\textbf{Cargas Discretas}
+\end{center}
+
+\begin{center}
+\begin{minipage}{0.45\textwidth}
+\begin{tikzpicture}[scale=0.9]
+    % Curvas equipotenciais
+    \foreach \r in {1,1.5,...,3}{
+        \draw[blue, thick] (0,0) circle(\r);
+    }
+    % Carga pontual
+    \node[red, circle, fill=red] at (0,0) {};
+    % Linhas de campo
+    \foreach \angle in {0,30,...,330}{
+        \draw[->,thick,orange] (\angle:0.4) -- (\angle:3.5);
+    }
+    % Legendas
+    \node[right] at (3.5,0) {Campo};
+    \node[below, blue] at (0,-3) {Equipotenciais};
+    \node[above, red] at (0,0.1) {$+q$};
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+\[
+\mathbf{E}(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0}
+\sum_i \frac{q_i (\mathbf{r} - \mathbf{r}_i)}{|\mathbf{r} - \mathbf{r}_i|^3}
+\]
+\end{minipage}
+\end{center}
+\begin{figure}
+
+    \centering
+    \includegraphics[width=0.5\textwidth]{figuras/linhas_potencial_e_campo.png}
+    \caption{Linhas coordenadas no sistema esferoidal: em vermelho, as superfícies de potencial constante; em azul, as linhas do campo elétrico.}
+    \label{fig:coord-esferoidal}
+\end{figure}
+
+
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Página 1: Cálculo Vetorial
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Essay: De Cargas ao Campo Elétrico}
+
+\subsection{A carga pontual como singularidade no espa\c{c}o}
+
+Uma carga pontual representa um tipo especial de distribui\c{c}\~ao de carga: ela est\'a completamente concentrada em um \'{u}nico ponto do espa\c{c}o. Para descrever matematicamente essa situa\c{c}\~ao dentro da formula\c{c}\~ao do eletromagnetismo, recorremos \`a Lei de Gauss em sua forma integral:
+
+\begin{equation}
+    \oint_S \vec{E} \cdot d\vec{A} = \frac{Q_{\text{int}}}{\varepsilon_0}.
+\end{equation}
+
+Quando o campo \( \vec{E} \) \'{e} gerado por uma carga pontual \( q \) colocada na origem, ele assume a forma radial conhecida:
+
+\begin{equation}
+    \vec{E}(\vec{r}) = \frac{q}{4\pi \varepsilon_0 r^2} \hat{r}.
+\end{equation}
+
+Aplicando a Lei de Gauss em uma esfera de raio arbitr\'ario centrada na origem, encontramos que a carga interna \( Q_{\text{int}} \) deve ser igual a \( q \). Para compatibilizar essa distribui\c{c}\~ao com a forma diferencial da Lei de Gauss,
+
+\begin{equation}
+    \nabla \cdot \vec{E} = \frac{\rho}{\varepsilon_0},
+\end{equation}
+
+a \'{u}nica distribui\c{c}\~ao \( \rho \) capaz de gerar o campo acima \'{e}:
+
+\begin{equation}
+    \rho(\vec{r}) = q \delta^3(\vec{r}),
+\end{equation}
+
+a chamada \textit{fun\c{c}\~ao delta de Dirac}.
+
+\subsection{O fluxo do campo elétrico}
+
+O estudo do campo elétrico começa com a análise do efeito de \textbf{cargas pontuais} sobre o espaço ao seu redor. Para um conjunto de cargas discretas \( q_i \) localizadas em posições \( \vec{r}_i \), o campo elétrico em um ponto \( \vec{r} \) é dado pela superposição dos campos individuais:
+
+\begin{equation}
+\vec{E}(\vec{r}) = \frac{1}{4\pi\varepsilon_0} \sum_i \frac{q_i (\vec{r} - \vec{r}_i)}{|\vec{r} - \vec{r}_i|^3}
+\end{equation}
+
+Essa expressão é a forma mais geral do campo, válida para distribuições discretas. No entanto, ao lidarmos com grandes quantidades de carga distribuídas no espaço, torna-se mais eficiente descrever o sistema por uma densidade de carga contínua \( \rho(\vec{r}) \), levando à formulação integral:
+
+\begin{equation}
+\vec{E}(\vec{r}) = \frac{1}{4\pi\varepsilon_0} \int \frac{\rho(\vec{r}') (\vec{r} - \vec{r}')}{|\vec{r} - \vec{r}'|^3} \, d^3r'
+\end{equation}
+
+A partir dessa noção de distribuição contínua, emerge naturalmente a aplicação da \textbf{Lei de Gauss}, que fornece uma forma alternativa e muitas vezes mais prática de calcular o campo elétrico, relacionando o \textit{fluxo} do campo através de uma superfície fechada à carga total no interior:
+
+\begin{equation}
+\oint_S \vec{E} \cdot d\vec{A} = \frac{Q_{\text{int}}}{\varepsilon_0}
+\end{equation}
+
+Quando encontramos sistemas altamente simétricos, como uma esfera condutora, um fio infinito ou um plano carregado, essa equação se revela uma aliada poderosa. Nesses cenários, o campo \( \vec{E} \) é constante em módulo e direção a uma superfície que seja sempre perpendicular ao campo e nulo caso sejam paralelos, desta forma caso esta Área possa ser definida desta forma, a integral da superfície se reduz a:
+
+\begin{equation}
+E \cdot A = \frac{Q_{\text{int}}}{\varepsilon_0}
+\end{equation}
+
+
+
+onde \( A \) é a área da superfície gaussiana. Com isso, extrai-se o campo para cada situação:
+
+\begin{itemize}
+  \item Carga pontual: \( E(r) = \dfrac{1}{4\pi\varepsilon_0} \dfrac{q}{r^2} \)
+  \item Fio infinito: \( E(r) = \dfrac{\lambda}{2\pi\varepsilon_0 r} \)
+  \item Plano infinito: \( E = \dfrac{\sigma}{2\varepsilon_0} \)
+\end{itemize}
+
+\subsection{Quando a simetria não basta para aplicação da Lei de Gauss}
+
+Nem todos os sistemas possuem simetria suficiente para a aplicação fácil da Lei de Gauss. Quando o campo elétrico se torna irregular, sem que haja uma superfície facilmente integrável que acompanhe essa irregularidade, recorre-se ao conceito de potencial elétrico escalar \( V \).
+
+Sabendo que o campo elétrico é conservativo em regiões eletrostáticas:
+
+\begin{equation}
+\nabla \times \vec{E} = 0
+\end{equation}
+
+pode-se defini-lo como o gradiente negativo de uma função escalar:
+
+\begin{equation}
+\vec{E} = -\nabla V
+\end{equation}
+
+Esse potencial representa o trabalho por unidade de carga para mover uma carga de uma referência \( \vec{r}_0 \) até o ponto \( \vec{r} \):
+
+\begin{equation}
+V(\vec{r}) = - \int_{\vec{r}_0}^{\vec{r}} \vec{E} \cdot d\vec{l}
+\end{equation}
+
+O ponto de referência \( \vec{r}_0 \) é arbitrário, pois devido ao campo elétrico ter rotacional nulo, sabemos que a integral do campo em um caminho fechado é nulo, o que vetorialmente é equivalente a dizer que apenas a diferença de potencial \( V(\vec{b}) - V(\vec{a}) \) tem significado físico. O referencial em \( \vec{r}_0 \) é utilizado para definir de forma única um potencial em um ponto de prova \( \vec{r} \), e é uma escolha conveniente como por exempo a definição do potencial nulo no infinito, no centro de simetria, ou em uma borda condutora — sempre com o objetivo de simplificar o cálculo e adequar a solução às condições físicas do sistema..
+
+\begin{align}
+    V(b) - V(a) &= -\int_a^b \vec{E} \cdot d\vec{l} \\
+    W &= Q (V_b - V_a)
+\end{align}
+\subsection{Do campo ao potencial: equações diferenciais}
+
+A Lei de Gauss em forma diferencial nos conduz a:
+
+\begin{equation}
+\nabla \cdot \vec{E} = \frac{\rho}{\varepsilon_0}
+\end{equation}
+
+Substituindo \( \vec{E} = -\nabla V \):
+
+\begin{equation}
+\nabla \cdot (-\nabla V) = -\nabla^2 V = \frac{\rho}{\varepsilon_0} \quad \Rightarrow \quad \nabla^2 V = -\frac{\rho}{\varepsilon_0}
+\end{equation}
+
+Esta é a \textbf{equação de Poisson}, válida onde há carga. Em regiões sem carga, temos a \textbf{equação de Laplace}:
+
+\begin{equation}
+\nabla^2 V = 0
+\end{equation}
+
+
+\subsection{Capacitores e o papel do potencial eletrost\'atico}
+
+A diferen\c{c}a de potencial \( \Delta V \) entre dois condutores eletrizados define um dos dispositivos fundamentais da eletrost\'atica: o capacitor. Um capacitor armazena energia el\'etrica ao manter cargas opostas em dois condutores separados, mantendo entre eles um campo el\'etrico est\'avel.
+
+A rela\c{c}\~ao entre a carga \( Q \) e a diferen\c{c}a de potencial \( \Delta V \) define a capacit\^ancia \( C \) do sistema:
+
+\begin{equation}
+    C = \frac{Q}{\Delta V}.
+\end{equation}
+
+Para configura\c{c}\~oes geom\'etricas simples, essa express\~ao pode ser calculada diretamente. Por exemplo, para um capacitor de placas paralelas com \'{a}rea \( A \) e separa\c{c}\~ao \( d \):
+
+\begin{equation}
+    C = \varepsilon_0 \frac{A}{d}.
+\end{equation}
+
+O campo entre as placas \'{e} uniforme, e o potencial varia linearmente. Outros exemplos not\'aveis incluem:
+
+\begin{itemize}
+    \item Esfera condutora de raio \( R \): \( C = 4 \pi \varepsilon_0 R \);
+    \item Capacitor es\'ferico: dois cascos conc\'entricos de raio \( a \) e \( b \):
+\begin{equation}
+    C = 4\pi \varepsilon_0 \frac{ab}{b - a}
+\end{equation}
+\end{itemize}
+
+Assim, os capacitores exemplificam como a diferen\c{c}a de potencial adquire interpreta\c{c}\~ao pr\'atica, relacionando o armazenamento de energia \`a geometria e \`a permissividade do meio.
+
+\subsection{Energia Armazenada no Campo Elétrico}
+
+\begin{align}
+    W &= \frac{1}{2} \int_{V} \rho(\vec{r}') V(\vec{r}')\, d^3r' \\
+    \text{Com Lei de Gauss:} \quad \nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \Rightarrow W = \frac{\varepsilon_0}{2} \int \vec{E}^2\, d^3r
+\end{align}
+
+\begin{equation}
+    W = \frac{1}{4\pi \varepsilon_0} \left( \frac{q_1 q_2}{r_{12}} + \frac{q_1 q_3}{r_{13}} + \frac{q_2 q_3}{r_{23}} \right)
+\end{equation}
+
+
+\subsection{Caso Discreto: Energia de Interação}
+
+\begin{itemize}
+    \item Energia de interação entre cargas pontuais:
+\begin{equation}
+    W = \frac{1}{2} \sum_i q_i V(\vec{r}_i) = \frac{1}{4\pi \varepsilon_0} \sum_{i<j} \frac{q_i q_j}{r_{ij}}
+\end{equation}
+
+\item Auto-interação diverge:
+\begin{equation}
+    \frac{q_i^2}{4\pi \varepsilon_0 r_{ii}} \to \infty \quad \text{(deve ser excluída)}
+\end{equation}
+\end{itemize}
+\subsection{Os três caminhos para resolver \( V \)}
+
+\begin{itemize}
+  \item \textbf{Método das imagens:} útil quando há planos condutores ou simetrias geométricas simples.
+  \item \textbf{Polinômios de Legendre:} aplicáveis quando há simetria azimutal (independência de \( \phi \)) em coordenadas esféricas.
+  \item \textbf{Harmônicos esféricos:} usados quando não há simetria adicional — o caso mais geral.
+\end{itemize}
+
+Uma consequência prática e conceitual importante é que, sendo o potencial uma função escalar, a equação diferencial associada à sua determinação envolve uma única equação escalar — caso contrário, exigiria a solução simultânea de três equações diferenciais. Essa simplicidade torna o uso do potencial particularmente eficiente na resolução de problemas eletrostáticos.
+
+
+\subsection{Do potencial ao campo}
+
+Após determinar \( V(\vec{r}) \), volta-se finalmente à relação fundamental:
+
+\begin{equation}
+\vec{E} = -\nabla V
+\end{equation}
+
+fechando o ciclo entre fontes \( \rho \), potenciais e campos. O potencial atua como função intermediária, facilitando a resolução escalar em vez da vetorial, desde que as condições de contorno sejam conhecidas.
+
+\newpage
+\thispagestyle{fancy}
+
+
+\mbox{}
+
+\newpage
+\thispagestyle{fancy}
+\mbox{}
+
+\newpage
+\thispagestyle{fancy}
+\mbox{}
+
+\newpage
+\thispagestyle{fancy}
+\mbox{}
+
+\newpage{}
+
+
+\thispagestyle{fancy}
+\mbox{}
+\end{document}
+
