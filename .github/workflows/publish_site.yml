@@ -14,5 +14,5 @@ jobs:
       site_title: "${{ github.repository }}"
       execute: "false"
       template_repo: "Academic-Codex/academic-codex.github.io"
-      template_path: ".github/actions/build-template-site/template"
+      template_path: ".github/template"
     secrets: inherit
