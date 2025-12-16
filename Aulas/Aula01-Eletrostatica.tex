@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{tikz}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}
+
+\begin{document}
+
+\section*{Resumo Aula 01 - Eletrostática (PGF5003 - IFUSP)}
+
+\subsection*{1. Natureza da Eletrostática}
+\begin{itemize}[leftmargin=1.5em]
+    \item Estuda \textbf{cargas em repouso}.
+    \item A interação entre cargas é descrita pela \textbf{Lei de Coulomb}:
+    \[ \mathbf{F} = \frac{1}{4\pi\varepsilon_0} \cdot \frac{q_1 q_2}{|\mathbf{r}|^2} \hat{\mathbf{r}} \]
+\end{itemize}
+
+\subsection*{2. Campo Elétrico $\mathbf{E}$}
+\begin{itemize}[leftmargin=1.5em]
+    \item Campo vetorial associado à presença de cargas.
+    \item Definido por:
+    \[ \mathbf{E}(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \int \frac{\rho(\mathbf{r'}) (\mathbf{r} - \mathbf{r'})}{|\mathbf{r} - \mathbf{r'}|^3} \, d^3\mathbf{r'} \]
+    \item Soma vetorial dos efeitos de todas as cargas sobre o ponto $\mathbf{r}$.
+\end{itemize}
+
+\subsection*{3. Equações de Maxwell (Regime Eletrostático)}
+\begin{itemize}[leftmargin=1.5em]
+    \item Lei de Gauss: \[ \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0} \]
+    \item Campo conservativo: \[ \nabla \times \mathbf{E} = 0 \]
+    \item Existe um \textbf{potencial escalar}:
+    \[ \mathbf{E} = -\nabla \phi \]
+\end{itemize}
+
+\subsection*{4. Potencial Elétrico $\phi$}
+\begin{itemize}[leftmargin=1.5em]
+    \item Escalar, facilita o cálculo e a visualização.
+    \item Satisfaz a equação de Poisson:
+    \[ \nabla^2 \phi = -\frac{\rho}{\varepsilon_0} \]
+    \item Em regiões sem carga: equação de Laplace:
+    \[ \nabla^2 \phi = 0 \]
+\end{itemize}
+
+\subsection*{5. Distribuições de Carga}
+\begin{itemize}[leftmargin=1.5em]
+    \item Cargas pontuais: singularidade no campo.
+    \item Distribuições contínuas: exigem integração.
+    \item Condutores:
+    \begin{itemize}
+        \item Carga na superfície.
+        \item Campo \textbf{perpendicular} à superfície.
+        \item Potencial \textbf{constante} no interior.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{6. Campo como Gradiente do Potencial}
+\begin{itemize}[leftmargin=1.5em]
+    \item Campo aponta na direção de \textbf{máxima queda de potencial}.
+    \item \textbf{Linhas de campo} são \textbf{perpendiculares} às \textbf{superfícies equipotenciais}.
+\end{itemize}
+\subsection*{Equações de Maxwell - Eletrostática}
+
+\begin{itemize}[leftmargin=1.5em]
+    \item \(\vec{E} = -\nabla \phi\)
+    \item \(\nabla \cdot \vec{E} = \dfrac{\rho}{\varepsilon_0}\)
+    \item \(\nabla \times \vec{E} = 0 \Rightarrow \oint \vec{E} \cdot d\vec{l} = 0\)
+    \item \(\nabla^2 \phi = -\dfrac{\rho}{\varepsilon_0}\), com carga
+    \item \(\nabla^2 \phi = 0\), sem carga
+\end{itemize}
+
+\subsection*{Intuições para Visualização}
+\begin{itemize}[leftmargin=1.5em]
+    \item Campo aponta onde o potencial decresce mais rápido.
+    \item Linhas de campo são sempre ortogonais às superfícies equipotenciais.
+    \item Em condutores: \( \phi = \text{constante} \), \( \mathbf{E}_{\text{interno}} = 0 \).
+\end{itemize}
+
+\end{document}
