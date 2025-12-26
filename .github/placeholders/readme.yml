@@ -1,0 +1,12 @@
+REPO_TAGLINE: Electromagnetic theory • Maxwell equations • fields
+ASSETS_DIR: .github/readme
+CTA_TEXT: Access the full course website
+THEME: library
+SITE_URL: https://academic-codex.github.io/PGF5003-Eletrodinamica
+
+BG_1: "#3F1D0B"
+BG_2: "#7C2D12"
+TEXT_MAIN: "#FFF7ED"
+TEXT_MUTED: "#FED7AA"
+ACCENT: "#FB923C"
+CARD_RADIUS: "18"
