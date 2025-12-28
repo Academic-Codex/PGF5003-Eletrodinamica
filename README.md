@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://academic-codex.github.io/PGF5003-Eletrodinamica">
-    <img src=".github/readme/hero.svg?v=2025-12-28T18:33:23.280833Z" width="100%" alt="Access the course website" />
+    <img src=".github/readme/hero.svg?v=2025-12-28T18:34:53.999195Z" width="100%" alt="Access the course website" />
   </a>
 </p>
 
