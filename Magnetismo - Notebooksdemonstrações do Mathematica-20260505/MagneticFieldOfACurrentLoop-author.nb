@@ -1,0 +1,1514 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     59025,       1505]
+NotebookOptionsPosition[     54459,       1362]
+NotebookOutlinePosition[     56100,       1414]
+CellTagsIndexPosition[     55772,       1402]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Magnetic Field of a Current Loop", "DemoTitle",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.457017997604527*^9, 3.457018010437511*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["", "InitializationSection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"AA", "[", 
+   RowBox[{"a_", ",", "i_", ",", "x_", ",", "z_"}], "]"}], ":=", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"i", " ", "\[Pi]", " ", 
+     SuperscriptBox["a", "2"], " ", 
+     RowBox[{"Abs", "[", "x", "]"}]}], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["a", "2"], "+", 
+       SuperscriptBox["x", "2"], "+", 
+       SuperscriptBox["z", "2"]}], ")"}], 
+     RowBox[{"3", "/", "2"}]]], 
+   RowBox[{"(", 
+    RowBox[{"1", "+", 
+     FractionBox[
+      RowBox[{"15", 
+       SuperscriptBox["a", "2"], 
+       SuperscriptBox["x", "2"]}], 
+      RowBox[{"8", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["a", "2"], "+", 
+          SuperscriptBox["x", "2"], "+", 
+          SuperscriptBox["z", "2"]}], ")"}], "2"]}]]}], ")"}], "   ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     FractionBox["\[Mu]0", 
+      RowBox[{"4", "\[Pi]"}]], "=", "1"}], " ", "*)"}]}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.472949728498765*^9, 3.4729498911610947`*^9}, {
+   3.472950004519046*^9, 3.472950094482359*^9}, {3.4729503785802794`*^9, 
+   3.472950383709826*^9}, {3.4729504222491207`*^9, 3.472950427591392*^9}, {
+   3.4729505533665524`*^9, 3.472950572806569*^9}, {3.473286850181986*^9, 
+   3.473286851350465*^9}, 3.473293705338952*^9},
+ CellID->605194849],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "[", 
+   RowBox[{"a_", ",", "i_"}], "]"}], ":=", 
+  RowBox[{"ContourPlot", "[", 
+   RowBox[{
+    RowBox[{"AA", "[", 
+     RowBox[{"a", ",", "i", ",", "x", ",", "z"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", 
+      RowBox[{"-", "12"}], ",", "12"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"z", ",", 
+      RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+    RowBox[{"Contours", "\[Rule]", 
+     RowBox[{"Max", "[", 
+      RowBox[{"5", ",", 
+       RowBox[{"Floor", "[", 
+        RowBox[{"2", "i"}], "]"}]}], "]"}]}], ",", 
+    RowBox[{"ContourStyle", "\[Rule]", 
+     RowBox[{"Directive", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Thickness", "[", ".005", "]"}], ",", 
+        RowBox[{"RGBColor", "[", 
+         RowBox[{".25", ",", ".43", ",", ".82"}], "]"}]}], "}"}], "]"}]}], 
+    ",", 
+    RowBox[{"ContourShading", "\[Rule]", "None"}], ",", 
+    RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+    RowBox[{"Frame", "\[Rule]", "False"}]}], "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.457019313597207*^9, 3.457019354642974*^9}, {
+   3.457019491876246*^9, 3.457019502778811*^9}, {3.457019533059564*^9, 
+   3.457019610620689*^9}, 3.457019765482826*^9, {3.457019799485735*^9, 
+   3.457019801467017*^9}, {3.457019923010323*^9, 3.457019925782385*^9}, {
+   3.457020089452211*^9, 3.4570200943760347`*^9}, {3.45702021619485*^9, 
+   3.457020218030615*^9}, {3.4570206227831573`*^9, 3.457020646099984*^9}, {
+   3.457020765413425*^9, 3.457020797745824*^9}, {3.45702348377488*^9, 
+   3.457023495850767*^9}, 3.457023913481162*^9, {3.457042006224412*^9, 
+   3.4570420116178617`*^9}, {3.457042199242485*^9, 3.457042210121163*^9}, {
+   3.457042242028214*^9, 3.457042243954565*^9}, {3.457049336383498*^9, 
+   3.457049360702314*^9}, 3.4570494963172092`*^9, {3.461544435890929*^9, 
+   3.4615444735136213`*^9}, {3.461544567161886*^9, 3.461544667144209*^9}, {
+   3.461545040207303*^9, 3.4615450503260927`*^9}, {3.461545081464727*^9, 
+   3.461545095247473*^9}, {3.461545139343247*^9, 3.461545173580784*^9}, {
+   3.461545424058975*^9, 3.461545435681909*^9}, {3.46154547577322*^9, 
+   3.461545482779545*^9}, {3.461545601752911*^9, 3.4615456065439157`*^9}, {
+   3.46154586732673*^9, 3.461545872817428*^9}, {3.461546029456373*^9, 
+   3.461546039862699*^9}, {3.472852840173661*^9, 3.472852847578829*^9}, {
+   3.472852882360135*^9, 3.472852965283738*^9}, {3.472853456079101*^9, 
+   3.47285349366859*^9}, {3.472853582515415*^9, 3.4728535941059713`*^9}, {
+   3.472853806014011*^9, 3.4728538196038723`*^9}, 3.472853901059445*^9, 
+   3.4728658115339727`*^9, {3.472949585167388*^9, 3.4729496003505077`*^9}, {
+   3.4729496516099*^9, 3.472949664233058*^9}, 3.472949708218573*^9, 
+   3.473277517045277*^9, {3.473277575591077*^9, 3.473277585086129*^9}, 
+   3.473280967835083*^9, {3.473281030261876*^9, 3.4732810605898952`*^9}, 
+   3.473281098079887*^9, {3.4732811694281797`*^9, 3.473281170626902*^9}, 
+   3.4732812232867613`*^9, 3.4732814966128693`*^9, 3.4732815730555773`*^9, {
+   3.473281620193618*^9, 3.4732816206960897`*^9}, {3.473282137607761*^9, 
+   3.473282142624007*^9}, 3.473293710305875*^9, {3.4736239729315414`*^9, 
+   3.473623979957244*^9}, {3.476621278619582*^9, 3.476621287358212*^9}, 
+   3.476621318442328*^9, {3.476621702910059*^9, 3.4766217046038713`*^9}, 
+   3.476621787427442*^9, {3.476634882726235*^9, 3.476634893402302*^9}, {
+   3.476635008395378*^9, 3.476635008752388*^9}, {3.476636348988201*^9, 
+   3.47663635822696*^9}},
+ CellID->1414776570],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"loop1", "[", 
+   RowBox[{"a_", ",", "i_"}], "]"}], ":=", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Thickness", "[", ".015", "]"}], ",", "Black", ",", 
+     RowBox[{"Circle", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"a", ",", 
+         RowBox[{".1", "a"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{".1", ",", 
+         RowBox[{"\[Pi]", "-", ".1"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"Thickness", "[", ".01", "]"}], ",", "Yellow", ",", 
+     RowBox[{"Circle", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"a", ",", 
+         RowBox[{".1", "a"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", ".3"}], ",", 
+         RowBox[{"\[Pi]", "+", ".3"}]}], "}"}]}], "]"}]}], "}"}], 
+   "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.473280244674008*^9, 3.4732802610096807`*^9}, {
+   3.473280710017614*^9, 3.473280723957161*^9}, {3.4732808394185534`*^9, 
+   3.473280841506153*^9}, {3.47328175564004*^9, 3.473281778797447*^9}, {
+   3.4736239835956078`*^9, 3.4736239906063085`*^9}, {3.47369036946419*^9, 
+   3.473690372186021*^9}, {3.473706379797222*^9, 3.4737064821249037`*^9}, 
+   3.473706518045766*^9, 3.4737065738227577`*^9, 3.4737066201536493`*^9, 
+   3.4737066574560127`*^9, {3.473706761225197*^9, 3.4737067759439287`*^9}, {
+   3.473706834202958*^9, 3.473706836206719*^9}, {3.473706913740933*^9, 
+   3.47370691775591*^9}, 3.4737069824135523`*^9, {3.473707029126445*^9, 
+   3.473707052052414*^9}, {3.4737070991226683`*^9, 3.473707120806726*^9}, {
+   3.47370718220126*^9, 3.4737071830821238`*^9}, 3.473707246676648*^9, {
+   3.4737073275388403`*^9, 3.473707347344294*^9}, {3.4741556067403717`*^9, 
+   3.4741556086907797`*^9}, {3.474155671101915*^9, 3.474155724937193*^9}, {
+   3.474155755236163*^9, 3.4741557960121117`*^9}, {3.474155923345018*^9, 
+   3.474155923787277*^9}, {3.474156155699196*^9, 3.474156163114373*^9}, {
+   3.4741562284294558`*^9, 3.474156234629134*^9}, {3.47415631559264*^9, 
+   3.4741563219685183`*^9}, {3.4741564394626503`*^9, 3.474156447941299*^9}, {
+   3.474156586564487*^9, 3.4741565917152777`*^9}, {3.474156666671309*^9, 
+   3.474156671838306*^9}, {3.474156820485302*^9, 3.474156826914592*^9}, {
+   3.4741569305375443`*^9, 3.4741569344803534`*^9}, {3.474157027013999*^9, 
+   3.4741570336366453`*^9}, {3.4766213296467037`*^9, 3.476621331347657*^9}, 
+   3.476621474079071*^9},
+ CellID->630216611],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"loop2", "[", 
+   RowBox[{"a_", ",", "i_"}], "]"}], ":=", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Thickness", "[", ".015", "]"}], ",", "Black", ",", 
+     RowBox[{"Circle", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"a", ",", 
+         RowBox[{".1", "a"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\[Pi]", "+", ".1"}], ",", 
+         RowBox[{
+          RowBox[{"2", "\[Pi]"}], "-", ".1"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"Thickness", "[", ".01", "]"}], ",", "Yellow", ",", 
+     RowBox[{"Circle", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"a", ",", 
+         RowBox[{".1", "a"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\[Pi]", "-", ".3"}], ",", 
+         RowBox[{
+          RowBox[{"2", "\[Pi]"}], "+", ".3"}]}], "}"}]}], "]"}]}], "}"}], 
+   "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.473277874461042*^9, 3.4732779017461147`*^9}, {
+   3.473278166172312*^9, 3.473278298555616*^9}, {3.473278338855954*^9, 
+   3.473278364967175*^9}, {3.473278454935479*^9, 3.4732785072798643`*^9}, {
+   3.47327971360916*^9, 3.473279716559757*^9}, 3.4732798672404222`*^9, {
+   3.473279984853878*^9, 3.4732799999336367`*^9}, {3.473280104748599*^9, 
+   3.473280121772547*^9}, 3.473280170502627*^9, 3.473280224616179*^9, {
+   3.47328041206579*^9, 3.473280483602449*^9}, 3.473280535949884*^9, 
+   3.473280589872397*^9, 3.4732806325541477`*^9, {3.473280846186915*^9, 
+   3.47328084818647*^9}, {3.4732817638003073`*^9, 3.473281769532997*^9}, 
+   3.473623993748623*^9, 3.473690391424489*^9, {3.473707189342057*^9, 
+   3.473707190269589*^9}, 3.473707370338256*^9, {3.4741556165559597`*^9, 
+   3.474155618339254*^9}, {3.474155837683869*^9, 3.4741558545583076`*^9}, {
+   3.474155917906212*^9, 3.4741559183765907`*^9}, {3.4741559785325117`*^9, 
+   3.474155991179366*^9}, {3.474156023862187*^9, 3.4741560300051813`*^9}, {
+   3.474156062559759*^9, 3.4741560696546907`*^9}, {3.4741561104656982`*^9, 
+   3.474156117424571*^9}, {3.474156217734309*^9, 3.4741562229810333`*^9}, {
+   3.474156306881373*^9, 3.4741563110640173`*^9}, {3.474156375499922*^9, 
+   3.4741563807625923`*^9}, {3.4741565186582527`*^9, 
+   3.4741565408810177`*^9}, {3.474156596932476*^9, 3.4741566034357557`*^9}, {
+   3.474156695024561*^9, 3.474156699735422*^9}, {3.474156833357026*^9, 
+   3.474156852613331*^9}, {3.474156947585758*^9, 3.47415695193734*^9}, {
+   3.4741570399412327`*^9, 3.4741570448849487`*^9}, 3.476621337739724*^9, 
+   3.476621479101808*^9},
+ CellID->1123461079]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"loop1", "[", 
+      RowBox[{"a", ",", "i"}], "]"}], ",", 
+     RowBox[{"g", "[", 
+      RowBox[{"a", ",", "i"}], "]"}], ",", 
+     RowBox[{"loop2", "[", 
+      RowBox[{"a", ",", "i"}], "]"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "12"}], ",", "12"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"575", ",", "400"}], "}"}]}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "6", ",", "\"\<ring radius\>\""}], "}"}], ",", ".1", 
+     ",", "10", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"i", ",", "2.75", ",", "\"\<current\>\""}], "}"}], ",", "0", 
+     ",", "10", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"TrackedSymbols", ":>", 
+    RowBox[{"{", 
+     RowBox[{"a", ",", "i"}], "}"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.457018970450014*^9, 3.457019091305249*^9}, {
+   3.457019128277835*^9, 3.457019159346781*^9}, {3.4570196327431*^9, 
+   3.457019662166996*^9}, {3.457023774204956*^9, 3.4570237774356623`*^9}, {
+   3.457041957505788*^9, 3.457041971241459*^9}, {3.461544682246358*^9, 
+   3.461544710073552*^9}, 3.46154490669832*^9, {3.4728529882439413`*^9, 
+   3.472853017562904*^9}, 3.4728532332460527`*^9, {3.472854494042186*^9, 
+   3.472854498919963*^9}, {3.4728560996713552`*^9, 3.47285614695676*^9}, 
+   3.472864066404294*^9, {3.4732797554747543`*^9, 3.473279773354617*^9}, 
+   3.47328021128837*^9, {3.4732802795888653`*^9, 3.4732803079172287`*^9}, {
+   3.47328080127586*^9, 3.473280827451371*^9}, {3.473281389614644*^9, 
+   3.4732814184625397`*^9}, {3.473281521260704*^9, 3.473281532291362*^9}, 
+   3.473281667140163*^9, {3.4732821891725388`*^9, 3.473282205043511*^9}, {
+   3.473286942670269*^9, 3.473286986342428*^9}, {3.473623937498998*^9, 
+   3.473623957846033*^9}, {3.4736240126595135`*^9, 3.473624022596507*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 6, $CellContext`i$$ = 2.75, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 6, "ring radius"}, 0.1, 10}, {{
+       Hold[$CellContext`i$$], 2.75, "current"}, 0, 10}}, Typeset`size$$ = {
+    575., {198., 202.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`a$2979$$ = 
+    0, $CellContext`i$2980$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 6, $CellContext`i$$ = 2.75}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$2979$$, 0], 
+        Hold[$CellContext`i$$, $CellContext`i$2980$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        $CellContext`loop1[$CellContext`a$$, $CellContext`i$$], 
+        $CellContext`g[$CellContext`a$$, $CellContext`i$$], 
+        $CellContext`loop2[$CellContext`a$$, $CellContext`i$$], 
+        PlotRange -> {{-12, 12}, {-10, 10}}, ImageSize -> {575, 400}], 
+      "Specifications" :> {{{$CellContext`a$$, 6, "ring radius"}, 0.1, 10, 
+         Appearance -> "Labeled"}, {{$CellContext`i$$, 2.75, "current"}, 0, 
+         10, Appearance -> "Labeled"}}, 
+      "Options" :> {TrackedSymbols :> {$CellContext`a$$, $CellContext`i$$}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{622., {257., 262.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`loop1[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]]] := Graphics[{
+          Thickness[0.015], Black, 
+          
+          Circle[{0, 0}, {$CellContext`a, 0.1 $CellContext`a}, {
+           0.1, Pi - 0.1}], 
+          Thickness[0.01], Yellow, 
+          
+          Circle[{0, 
+           0}, {$CellContext`a, 0.1 $CellContext`a}, {-0.3, Pi + 
+            0.3}]}], $CellContext`g[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]]] := ContourPlot[
+         $CellContext`AA[$CellContext`a, $CellContext`i, $CellContext`x, \
+$CellContext`z], {$CellContext`x, -12, 12}, {$CellContext`z, -10, 10}, 
+         Contours -> Max[5, 
+           Floor[2 $CellContext`i]], ContourStyle -> Directive[{
+            Thickness[0.005], 
+            RGBColor[0.25, 0.43, 0.82]}], ContourShading -> None, Axes -> 
+         False, Frame -> False], $CellContext`AA[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]], 
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`z, 
+          Blank[]]] := (((($CellContext`i Pi) $CellContext`a^2) 
+          Abs[$CellContext`x])/($CellContext`a^2 + $CellContext`x^2 + \
+$CellContext`z^2)^(3/2)) (
+         1 + ((15 $CellContext`a^2) $CellContext`x^2)/(
+          8 ($CellContext`a^2 + $CellContext`x^2 + $CellContext`z^2)^2)), \
+$CellContext`loop2[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]]] := Graphics[{
+          Thickness[0.015], Black, 
+          
+          Circle[{0, 0}, {$CellContext`a, 0.1 $CellContext`a}, {
+           Pi + 0.1, 2 Pi - 0.1}], 
+          Thickness[0.01], Yellow, 
+          
+          Circle[{0, 0}, {$CellContext`a, 0.1 $CellContext`a}, {
+           Pi - 0.3, 2 Pi + 0.3}]}], Attributes[PlotRange] = {ReadProtected}}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->1644210738]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection"],
+
+Cell[TextData[{
+ "A electrical current ",
+ Cell[BoxData[
+  FormBox["I", TraditionalForm]], "InlineMath"],
+ " moving around a circular loop of radius ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]], "InlineMath"],
+ ", shown in yellow from a lateral point of view, produces a magnetic field, \
+with lines of force shown as blue loops. For clarity, only lines of force in \
+the vertical plane bisecting the ring (",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"y", "=", "0"}], TraditionalForm]], "InlineMath"],
+ ") are shown."
+}], "ManipulateCaption",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.473282527312879*^9, 3.473282683939802*^9}, {
+   3.4732827309100924`*^9, 3.4732829465276537`*^9}, {3.473283134353417*^9, 
+   3.473283137520609*^9}, {3.4732831719464293`*^9, 3.473283223236512*^9}, {
+   3.473283257149941*^9, 3.473283362858482*^9}, 3.473283405428837*^9, {
+   3.473283449086834*^9, 3.473283463803073*^9}, {3.4732835434575977`*^9, 
+   3.473283601077381*^9}, {3.4732836330419903`*^9, 3.473283691929368*^9}, {
+   3.473283745262185*^9, 3.473283951787839*^9}, {3.473284019360796*^9, 
+   3.473284130339429*^9}, {3.4732842283308563`*^9, 3.473284229777863*^9}, {
+   3.473284280901081*^9, 3.4732843578872433`*^9}, {3.4732844373315697`*^9, 
+   3.473284473315894*^9}, {3.4732845230780773`*^9, 3.4732845282699347`*^9}, {
+   3.4732845650175667`*^9, 3.473284579520184*^9}, {3.473284621510919*^9, 
+   3.473284671790493*^9}, {3.473284902353133*^9, 3.473285001722598*^9}, {
+   3.4732870129653387`*^9, 3.473287013497169*^9}, {3.4736316455598245`*^9, 
+   3.4736316613254495`*^9}, {3.4736317048254495`*^9, 
+   3.4736317127316995`*^9}, {3.4737074254305887`*^9, 
+   3.4737074260970087`*^9}, {3.47415674368743*^9, 3.474156746052661*^9}, 
+   3.476717921458014*^9}],
+
+Cell[TextData[{
+ "The strength of the magnetic field is indicated by the density of the lines \
+of force. The magnitude is expressed in units of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Mu]", "0"], "/", "4"}], "\[Pi]"}], TraditionalForm]], 
+  "InlineMath"],
+ ". The field is cylindrically symmetrical about the axis of the ring. By a \
+right-hand rule, a counterclockwise current produces magnetic lines of force \
+that point upward inside the ring, downward outside the ring. At distances ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"r", "\[GreaterGreater]", "a"}], TraditionalForm]], "InlineMath"],
+ ", the ring behaves like a magnetic dipole ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    StyleBox["m",
+     FontWeight->"Bold",
+     FontSlant->"Plain"], "=", 
+    RowBox[{"\[Pi]", " ", 
+     SuperscriptBox["a", "2"], 
+     StyleBox["I",
+      FontWeight->"Bold",
+      FontSlant->"Plain"]}]}], TraditionalForm]], "InlineMath"],
+ ", with vector potential ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    StyleBox["A",
+     FontWeight->"Bold",
+     FontSlant->"Plain"], "=", 
+    RowBox[{
+     FractionBox[
+      SubscriptBox["\[Mu]", "0"], 
+      RowBox[{"4", "\[Pi]"}]], 
+     FractionBox[
+      RowBox[{
+       StyleBox["m",
+        FontWeight->"Bold",
+        FontSlant->"Plain"], " ", "\[Cross]", " ", 
+       StyleBox["r",
+        FontWeight->"Bold",
+        FontSlant->"Plain"]}], 
+      SuperscriptBox["r", "3"]]}]}], TraditionalForm]], "InlineMath"],
+ ". As ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"a", "\[Rule]", "0"}], TraditionalForm]], "InlineMath"],
+ " (with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["a", "2"], "I"}], TraditionalForm]], "InlineMath"],
+ " constant), this approaches the field of a point magnetic dipole."
+}], "ManipulateCaption",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.473282527312879*^9, 3.473282683939802*^9}, {
+   3.4732827309100924`*^9, 3.4732829465276537`*^9}, {3.473283134353417*^9, 
+   3.473283137520609*^9}, {3.4732831719464293`*^9, 3.473283223236512*^9}, {
+   3.473283257149941*^9, 3.473283362858482*^9}, 3.473283405428837*^9, {
+   3.473283449086834*^9, 3.473283463803073*^9}, {3.4732835434575977`*^9, 
+   3.473283601077381*^9}, {3.4732836330419903`*^9, 3.473283691929368*^9}, {
+   3.473283745262185*^9, 3.473283951787839*^9}, {3.473284019360796*^9, 
+   3.473284130339429*^9}, {3.4732842283308563`*^9, 3.473284229777863*^9}, {
+   3.473284280901081*^9, 3.4732843578872433`*^9}, {3.4732844373315697`*^9, 
+   3.473284473315894*^9}, {3.4732845230780773`*^9, 3.4732845282699347`*^9}, {
+   3.4732845650175667`*^9, 3.473284579520184*^9}, {3.473284621510919*^9, 
+   3.473284671790493*^9}, {3.473284902353133*^9, 3.473285001722598*^9}, {
+   3.4732870129653387`*^9, 3.473287013497169*^9}, {3.4736316455598245`*^9, 
+   3.4736316613254495`*^9}, {3.4736317048254495`*^9, 
+   3.4736317127316995`*^9}, {3.4766219185657873`*^9, 3.476621951402999*^9}, {
+   3.476622493112239*^9, 3.476622605006702*^9}, {3.4994419481215*^9, 
+   3.499441950855875*^9}, {3.49944294184025*^9, 3.499442972559*^9}, {
+   3.49962878676175*^9, 3.499628803808625*^9}},
+ CellID->102339826],
+
+Cell[TextData[{
+ "It is shown in the Details section that a contour plot of the vector \
+potential ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["A", "\[Phi]"], "(", 
+    RowBox[{"x", ",", "z"}], ")"}], TraditionalForm]], "InlineMath"],
+ " in the ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"y", "=", "0"}], TraditionalForm]], "InlineMath"],
+ " plane coincides with the ",
+ "magnetic",
+ " lines of force."
+}], "ManipulateCaption",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.473285070778674*^9, 3.473285151495852*^9}, {
+   3.47328518924331*^9, 3.4732852381231117`*^9}, {3.473285279042029*^9, 
+   3.473285282879472*^9}, {3.499438933872566*^9, 3.499438933872795*^9}, {
+   3.4994389663224*^9, 3.499438966322667*^9}},
+ CellID->668102822]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 6, $CellContext`i$$ = 2.75, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 6, "ring radius"}, 0.1, 10}, {{
+       Hold[$CellContext`i$$], 2.75, "current"}, 0, 10}}, Typeset`size$$ = {
+    575., {198., 202.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`a$3035$$ = 
+    0, $CellContext`i$3036$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 6, $CellContext`i$$ = 2.75}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$3035$$, 0], 
+        Hold[$CellContext`i$$, $CellContext`i$3036$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        $CellContext`loop1[$CellContext`a$$, $CellContext`i$$], 
+        $CellContext`g[$CellContext`a$$, $CellContext`i$$], 
+        $CellContext`loop2[$CellContext`a$$, $CellContext`i$$], 
+        PlotRange -> {{-12, 12}, {-10, 10}}, ImageSize -> {575, 400}], 
+      "Specifications" :> {{{$CellContext`a$$, 6, "ring radius"}, 0.1, 10, 
+         Appearance -> "Labeled"}, {{$CellContext`i$$, 2.75, "current"}, 0, 
+         10, Appearance -> "Labeled"}}, 
+      "Options" :> {TrackedSymbols :> {$CellContext`a$$, $CellContext`i$$}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{622., {257., 262.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`loop1[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]]] := Graphics[{
+          Thickness[0.015], Black, 
+          
+          Circle[{0, 0}, {$CellContext`a, 0.1 $CellContext`a}, {
+           0.1, Pi - 0.1}], 
+          Thickness[0.01], Yellow, 
+          
+          Circle[{0, 
+           0}, {$CellContext`a, 0.1 $CellContext`a}, {-0.3, Pi + 
+            0.3}]}], $CellContext`g[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]]] := ContourPlot[
+         $CellContext`AA[$CellContext`a, $CellContext`i, $CellContext`x, \
+$CellContext`z], {$CellContext`x, -12, 12}, {$CellContext`z, -10, 10}, 
+         Contours -> Max[5, 
+           Floor[2 $CellContext`i]], ContourStyle -> Directive[{
+            Thickness[0.005], 
+            RGBColor[0.25, 0.43, 0.82]}], ContourShading -> None, Axes -> 
+         False, Frame -> False], $CellContext`AA[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]], 
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`z, 
+          Blank[]]] := (((($CellContext`i Pi) $CellContext`a^2) 
+          Abs[$CellContext`x])/($CellContext`a^2 + $CellContext`x^2 + \
+$CellContext`z^2)^(3/2)) (
+         1 + ((15 $CellContext`a^2) $CellContext`x^2)/(
+          8 ($CellContext`a^2 + $CellContext`x^2 + $CellContext`z^2)^2)), \
+$CellContext`loop2[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]]] := Graphics[{
+          Thickness[0.015], Black, 
+          
+          Circle[{0, 0}, {$CellContext`a, 0.1 $CellContext`a}, {
+           Pi + 0.1, 2 Pi - 0.1}], 
+          Thickness[0.01], Yellow, 
+          
+          Circle[{0, 0}, {$CellContext`a, 0.1 $CellContext`a}, {
+           Pi - 0.3, 2 Pi + 0.3}]}], Attributes[PlotRange] = {ReadProtected}}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->430303970]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 6, $CellContext`i$$ = 10., 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 6, "ring radius"}, 0.1, 10}, {{
+       Hold[$CellContext`i$$], 10., "current"}, 0, 10}}, Typeset`size$$ = {
+    575., {198., 202.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`a$3091$$ = 
+    0, $CellContext`i$3092$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 6, $CellContext`i$$ = 10.}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$3091$$, 0], 
+        Hold[$CellContext`i$$, $CellContext`i$3092$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        $CellContext`loop1[$CellContext`a$$, $CellContext`i$$], 
+        $CellContext`g[$CellContext`a$$, $CellContext`i$$], 
+        $CellContext`loop2[$CellContext`a$$, $CellContext`i$$], 
+        PlotRange -> {{-12, 12}, {-10, 10}}, ImageSize -> {575, 400}], 
+      "Specifications" :> {{{$CellContext`a$$, 6, "ring radius"}, 0.1, 10, 
+         Appearance -> "Labeled"}, {{$CellContext`i$$, 10., "current"}, 0, 10,
+          Appearance -> "Labeled"}}, 
+      "Options" :> {TrackedSymbols :> {$CellContext`a$$, $CellContext`i$$}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{618., {256.34375, 261.65625}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`loop1[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]]] := Graphics[{
+          Thickness[0.015], Black, 
+          
+          Circle[{0, 0}, {$CellContext`a, 0.1 $CellContext`a}, {
+           0.1, Pi - 0.1}], 
+          Thickness[0.01], Yellow, 
+          
+          Circle[{0, 
+           0}, {$CellContext`a, 0.1 $CellContext`a}, {-0.3, Pi + 
+            0.3}]}], $CellContext`g[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]]] := ContourPlot[
+         $CellContext`AA[$CellContext`a, $CellContext`i, $CellContext`x, \
+$CellContext`z], {$CellContext`x, -12, 12}, {$CellContext`z, -10, 10}, 
+         Contours -> Max[5, 
+           Floor[2 $CellContext`i]], ContourStyle -> Directive[{
+            Thickness[0.005], 
+            RGBColor[0.25, 0.43, 0.82]}], ContourShading -> None, Axes -> 
+         False, Frame -> False], $CellContext`AA[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]], 
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`z, 
+          Blank[]]] := (((($CellContext`i Pi) $CellContext`a^2) 
+          Abs[$CellContext`x])/($CellContext`a^2 + $CellContext`x^2 + \
+$CellContext`z^2)^(3/2)) (
+         1 + ((15 $CellContext`a^2) $CellContext`x^2)/(
+          8 ($CellContext`a^2 + $CellContext`x^2 + $CellContext`z^2)^2)), \
+$CellContext`loop2[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]]] := Graphics[{
+          Thickness[0.015], Black, 
+          
+          Circle[{0, 0}, {$CellContext`a, 0.1 $CellContext`a}, {
+           Pi + 0.1, 2 Pi - 0.1}], 
+          Thickness[0.01], Yellow, 
+          
+          Circle[{0, 0}, {$CellContext`a, 0.1 $CellContext`a}, {
+           Pi - 0.3, 2 Pi + 0.3}]}], Attributes[PlotRange] = {ReadProtected}}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->1541384341],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 4.03, $CellContext`i$$ = 0., 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 4.03, "ring radius"}, 0.1, 10}, {{
+       Hold[$CellContext`i$$], 0., "current"}, 0, 10}}, Typeset`size$$ = {
+    575., {198., 202.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`a$3147$$ = 
+    0, $CellContext`i$3148$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 4.03, $CellContext`i$$ = 0.}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$3147$$, 0], 
+        Hold[$CellContext`i$$, $CellContext`i$3148$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        $CellContext`loop1[$CellContext`a$$, $CellContext`i$$], 
+        $CellContext`g[$CellContext`a$$, $CellContext`i$$], 
+        $CellContext`loop2[$CellContext`a$$, $CellContext`i$$], 
+        PlotRange -> {{-12, 12}, {-10, 10}}, ImageSize -> {575, 400}], 
+      "Specifications" :> {{{$CellContext`a$$, 4.03, "ring radius"}, 0.1, 10, 
+         Appearance -> "Labeled"}, {{$CellContext`i$$, 0., "current"}, 0, 10, 
+         Appearance -> "Labeled"}}, 
+      "Options" :> {TrackedSymbols :> {$CellContext`a$$, $CellContext`i$$}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{618., {256.34375, 261.65625}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`loop1[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]]] := Graphics[{
+          Thickness[0.015], Black, 
+          
+          Circle[{0, 0}, {$CellContext`a, 0.1 $CellContext`a}, {
+           0.1, Pi - 0.1}], 
+          Thickness[0.01], Yellow, 
+          
+          Circle[{0, 
+           0}, {$CellContext`a, 0.1 $CellContext`a}, {-0.3, Pi + 
+            0.3}]}], $CellContext`g[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]]] := ContourPlot[
+         $CellContext`AA[$CellContext`a, $CellContext`i, $CellContext`x, \
+$CellContext`z], {$CellContext`x, -12, 12}, {$CellContext`z, -10, 10}, 
+         Contours -> Max[5, 
+           Floor[2 $CellContext`i]], ContourStyle -> Directive[{
+            Thickness[0.005], 
+            RGBColor[0.25, 0.43, 0.82]}], ContourShading -> None, Axes -> 
+         False, Frame -> False], $CellContext`AA[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]], 
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`z, 
+          Blank[]]] := (((($CellContext`i Pi) $CellContext`a^2) 
+          Abs[$CellContext`x])/($CellContext`a^2 + $CellContext`x^2 + \
+$CellContext`z^2)^(3/2)) (
+         1 + ((15 $CellContext`a^2) $CellContext`x^2)/(
+          8 ($CellContext`a^2 + $CellContext`x^2 + $CellContext`z^2)^2)), \
+$CellContext`loop2[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]]] := Graphics[{
+          Thickness[0.015], Black, 
+          
+          Circle[{0, 0}, {$CellContext`a, 0.1 $CellContext`a}, {
+           Pi + 0.1, 2 Pi - 0.1}], 
+          Thickness[0.01], Yellow, 
+          
+          Circle[{0, 0}, {$CellContext`a, 0.1 $CellContext`a}, {
+           Pi - 0.3, 2 Pi + 0.3}]}], Attributes[PlotRange] = {ReadProtected}}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->951385426],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 0.1, $CellContext`i$$ = 3.71, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 0.1, "ring radius"}, 0.1, 10}, {{
+       Hold[$CellContext`i$$], 3.71, "current"}, 0, 10}}, Typeset`size$$ = {
+    575., {198., 202.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`a$3203$$ = 
+    0, $CellContext`i$3204$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 0.1, $CellContext`i$$ = 3.71}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$3203$$, 0], 
+        Hold[$CellContext`i$$, $CellContext`i$3204$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        $CellContext`loop1[$CellContext`a$$, $CellContext`i$$], 
+        $CellContext`g[$CellContext`a$$, $CellContext`i$$], 
+        $CellContext`loop2[$CellContext`a$$, $CellContext`i$$], 
+        PlotRange -> {{-12, 12}, {-10, 10}}, ImageSize -> {575, 400}], 
+      "Specifications" :> {{{$CellContext`a$$, 0.1, "ring radius"}, 0.1, 10, 
+         Appearance -> "Labeled"}, {{$CellContext`i$$, 3.71, "current"}, 0, 
+         10, Appearance -> "Labeled"}}, 
+      "Options" :> {TrackedSymbols :> {$CellContext`a$$, $CellContext`i$$}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{618., {256.34375, 261.65625}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`loop1[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]]] := Graphics[{
+          Thickness[0.015], Black, 
+          
+          Circle[{0, 0}, {$CellContext`a, 0.1 $CellContext`a}, {
+           0.1, Pi - 0.1}], 
+          Thickness[0.01], Yellow, 
+          
+          Circle[{0, 
+           0}, {$CellContext`a, 0.1 $CellContext`a}, {-0.3, Pi + 
+            0.3}]}], $CellContext`g[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]]] := ContourPlot[
+         $CellContext`AA[$CellContext`a, $CellContext`i, $CellContext`x, \
+$CellContext`z], {$CellContext`x, -12, 12}, {$CellContext`z, -10, 10}, 
+         Contours -> Max[5, 
+           Floor[2 $CellContext`i]], ContourStyle -> Directive[{
+            Thickness[0.005], 
+            RGBColor[0.25, 0.43, 0.82]}], ContourShading -> None, Axes -> 
+         False, Frame -> False], $CellContext`AA[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]], 
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`z, 
+          Blank[]]] := (((($CellContext`i Pi) $CellContext`a^2) 
+          Abs[$CellContext`x])/($CellContext`a^2 + $CellContext`x^2 + \
+$CellContext`z^2)^(3/2)) (
+         1 + ((15 $CellContext`a^2) $CellContext`x^2)/(
+          8 ($CellContext`a^2 + $CellContext`x^2 + $CellContext`z^2)^2)), \
+$CellContext`loop2[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`i, 
+          Blank[]]] := Graphics[{
+          Thickness[0.015], Black, 
+          
+          Circle[{0, 0}, {$CellContext`a, 0.1 $CellContext`a}, {
+           Pi + 0.1, 2 Pi - 0.1}], 
+          Thickness[0.01], Yellow, 
+          
+          Circle[{0, 0}, {$CellContext`a, 0.1 $CellContext`a}, {
+           Pi - 0.3, 2 Pi + 0.3}]}], Attributes[PlotRange] = {ReadProtected}}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->1919102867]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "DetailsSection"],
+
+Cell[TextData[{
+ "The vector potential ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["A", "\[Phi]"], "(", 
+    RowBox[{"r", ",", "\[Theta]"}], ")"}], TraditionalForm]], "InlineMath"],
+ " for a ring of current can be solved exactly in terms of complete elliptic \
+integrals. Transforming to Cartesian coordinates in the vertical plane \
+bisecting the ring, the following approximation is found to be \
+indistinguishable graphically from the exact solution:  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["A", "\[Phi]"], "(", 
+     RowBox[{"x", ",", "z"}], ")"}], "=", 
+    RowBox[{
+     FractionBox[
+      SubscriptBox["\[Mu]", "0"], 
+      RowBox[{"4", "\[Pi]"}]], 
+     FractionBox[
+      RowBox[{"\[Pi]", " ", 
+       SuperscriptBox["a", 
+        RowBox[{"2", " "}]], "I", " ", "x"}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["a", "2"], "+", 
+         SuperscriptBox["x", "2"], "+", 
+         SuperscriptBox["z", "2"]}], ")"}], 
+       RowBox[{"3", "/", "2"}]]], 
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       FractionBox[
+        RowBox[{"15", 
+         SuperscriptBox["a", "2"], 
+         SuperscriptBox["x", "2"]}], 
+        RowBox[{"8", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            SuperscriptBox["a", "2"], "+", 
+            SuperscriptBox["x", "2"], "+", 
+            SuperscriptBox["z", "2"]}], ")"}], "2"]}]]}], ")"}]}]}], 
+   TraditionalForm]], "InlineMath"],
+ ". The magnetic induction is given by ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    StyleBox["B",
+     FontWeight->"Bold",
+     FontSlant->"Plain"], "=", 
+    RowBox[{"\[Del]", 
+     RowBox[{"\[Cross]", 
+      StyleBox["A",
+       FontWeight->"Bold",
+       FontSlant->"Plain"]}]}]}], TraditionalForm]], "InlineMath"],
+ ", so that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["B", "x"], "=", 
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"\[PartialD]", "\[InvisibleSpace]", 
+       SubscriptBox["A", "\[Phi]"]}], 
+      RowBox[{"\[PartialD]", "\[InvisibleSpace]", "z"}]]}]}], 
+   TraditionalForm]], "InlineMath"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["B", "z"], "=", 
+    FractionBox[
+     RowBox[{"\[PartialD]", "\[InvisibleSpace]", 
+      SubscriptBox["A", "\[Phi]"]}], 
+     RowBox[{"\[PartialD]", "\[InvisibleSpace]", "x"}]]}], TraditionalForm]], 
+  "InlineMath"],
+ ". Since this is a magnetostatic problem, the magnetic induction can also be \
+represented in terms of a scalar potential ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    StyleBox["B",
+     FontWeight->"Bold",
+     FontSlant->"Plain"], "=", 
+    RowBox[{"-", 
+     RowBox[{"\[Del]", 
+      SubscriptBox["\[CapitalPhi]", "m"]}]}]}], TraditionalForm]], 
+  "InlineMath"],
+ ", so ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["B", "x"], "=", 
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"\[PartialD]", " ", 
+       SubscriptBox["\[CapitalPhi]", "m"]}], 
+      RowBox[{"\[PartialD]", " ", "x"}]]}]}], TraditionalForm]], "InlineMath"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["B", "z"], "=", 
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"\[PartialD]", " ", 
+       SubscriptBox["\[CapitalPhi]", "m"]}], 
+      RowBox[{"\[PartialD]", " ", "z"}]]}]}], TraditionalForm]], "InlineMath"],
+ ". The magnetic lines of force are represented by contours ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[CapitalPsi]", "(", 
+    RowBox[{"x", ",", "z"}], ")"}], TraditionalForm]], "InlineMath"],
+ " orthogonal to those of the potential ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[CapitalPhi]", "m"], "(", 
+    RowBox[{"x", ",", "z"}], ")"}], TraditionalForm]], "InlineMath"],
+ ", thus ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[Del]", 
+      RowBox[{"\[CapitalPsi]", "(", 
+       RowBox[{"x", ",", "z"}], ")"}]}], "\[CenterDot]", 
+     RowBox[{"\[Del]", 
+      RowBox[{
+       SubscriptBox["\[CapitalPhi]", "m"], "(", 
+       RowBox[{"x", ",", "z"}], ")"}]}]}], "=", "0"}], TraditionalForm]], 
+  "InlineMath"],
+ ". This equation can be satisfied by ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[CapitalPsi]", "(", 
+     RowBox[{"x", ",", "z"}], ")"}], "=", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["A", "\[Phi]"], "(", 
+      RowBox[{"x", ",", "z"}], ")"}], "."}]}], TraditionalForm]], "InlineMath"]
+}], "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.47328560867675*^9, 3.473285724978177*^9}, {
+   3.473285830615075*^9, 3.473285913594384*^9}, {3.473285943652048*^9, 
+   3.473285999342504*^9}, {3.473286514915247*^9, 3.473286525246027*^9}, {
+   3.4732865598331337`*^9, 3.473286774278658*^9}, {3.4732870387479*^9, 
+   3.473287242360038*^9}, {3.473287294319437*^9, 3.473287297092342*^9}, {
+   3.473287357196142*^9, 3.473287665947299*^9}, {3.4732877158138113`*^9, 
+   3.473287727456603*^9}, {3.4732878066294622`*^9, 3.473287807473081*^9}, {
+   3.473287842459509*^9, 3.473287868233622*^9}, {3.473287927376733*^9, 
+   3.473287980440406*^9}, {3.473288013733542*^9, 3.4732880673090277`*^9}, {
+   3.4732881051601477`*^9, 3.473288162535335*^9}, {3.473288192937314*^9, 
+   3.473288344028216*^9}, {3.4732921895102262`*^9, 3.4732923255618763`*^9}, 
+   3.473292658373323*^9, {3.473292808899003*^9, 3.4732928110265303`*^9}, {
+   3.47329294814373*^9, 3.473293009725862*^9}, 3.4732930470009937`*^9, {
+   3.4736317711066995`*^9, 3.4736318282004495`*^9}, {3.499438999481839*^9, 
+   3.499439012674038*^9}, {3.499439340799464*^9, 3.4994393590985727`*^9}, {
+   3.499441983480875*^9, 3.499442014855875*^9}},
+ CellID->983735429],
+
+Cell[TextData[{
+ "Reference: J. D. Jackson, ",
+ StyleBox["Classical Electrodynamics, ",
+  FontSlant->"Italic"],
+ "3rd ed.",
+ ", New York: John Wiley & Sons, 1999 pp. 181\[Dash]186."
+}], "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4732853034260273`*^9, 3.473285359922819*^9}, {
+   3.473285422013175*^9, 3.4732855303461037`*^9}, {3.4736318610754495`*^9, 
+   3.4736318841379495`*^9}, {3.476718187383913*^9, 3.476718200660803*^9}},
+ CellID->1759622838]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Resize Images"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.4736240608003273`*^9},
+ FontFamily->"Verdana",
+ CellTags->"ResizeImages"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Rotate and Zoom in 3D"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" on Mac) and drag up and down to zoom.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"RotateAndZoomIn3D"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Drag Locators"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"DragLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Create and Delete Locators"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"CreateAndDeleteLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Slider Zoom"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" to make ever finer adjustments.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.4736318890285745`*^9},
+ FontFamily->"Verdana",
+ CellTags->"SliderZoom"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Gamepad Controls"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9},
+ FontFamily->"Verdana",
+ CellTags->"GamepadControls"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Automatic Animation"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0, CellBaseline -> Baseline], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.473624061944442*^9},
+ FontFamily->"Verdana",
+ CellTags->"AutomaticAnimation"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Bookmark Animation"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SearchTermsSection"],
+
+Cell["physics", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4732819549345493`*^9, 3.473281970195715*^9}},
+ CellID->1771322391],
+
+Cell["electromagnetism", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.47328201607222*^9, 3.47328202083774*^9}},
+ CellID->49627176]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "RelatedLinksSection"],
+
+Cell[TextData[ButtonBox["Current",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://scienceworld.wolfram.com/physics/Current.html"], None},
+ ButtonNote->
+  "http://scienceworld.wolfram.com/physics/Current.html"]], "RelatedLinks",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4736241757108173`*^9, 3.4736241812783737`*^9}},
+ CellID->731039197],
+
+Cell[TextData[ButtonBox["Magnetic Field",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://scienceworld.wolfram.com/physics/MagneticField.html"], None},
+ ButtonNote->
+  "http://scienceworld.wolfram.com/physics/MagneticField.html"]], \
+"RelatedLinks",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4736241359728436`*^9, 3.473624142875534*^9}},
+ CellID->344687695],
+
+Cell[TextData[ButtonBox["Magnetic Vector Potential",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://scienceworld.wolfram.com/physics/MagneticVectorPotential.html"]\
+, None},
+ ButtonNote->
+  "http://scienceworld.wolfram.com/physics/MagneticVectorPotential.html"]], \
+"RelatedLinks",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4736241057188187`*^9, 3.4736241157888255`*^9}},
+ CellID->452396709]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection"],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["S. M. Blinder",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=S.+M.+Blinder"],
+     None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=S.+M.+Blinder"]
+}], "Author",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.473281878208253*^9, 3.4732818830554953`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{972, 596},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+Magnification->1.,
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (February 18, 2009)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ResizeImages"->{
+  Cell[46653, 1138, 376, 9, 29, "ControlSuggestions",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[47032, 1149, 678, 16, 29, "ControlSuggestions",
+   CellTags->"RotateAndZoomIn3D"]},
+ "DragLocators"->{
+  Cell[47713, 1167, 340, 11, 29, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "CreateAndDeleteLocators"->{
+  Cell[48056, 1180, 637, 15, 29, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
+ "SliderZoom"->{
+  Cell[48696, 1197, 908, 22, 29, "ControlSuggestions",
+   CellTags->"SliderZoom"]},
+ "GamepadControls"->{
+  Cell[49607, 1221, 369, 9, 29, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "AutomaticAnimation"->{
+  Cell[49979, 1232, 1526, 32, 29, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[51508, 1266, 908, 21, 29, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ResizeImages", 54873, 1375},
+ {"RotateAndZoomIn3D", 54982, 1378},
+ {"DragLocators", 55092, 1381},
+ {"CreateAndDeleteLocators", 55208, 1384},
+ {"SliderZoom", 55322, 1387},
+ {"GamepadControls", 55428, 1390},
+ {"AutomaticAnimation", 55541, 1393},
+ {"BookmarkAnimation", 55658, 1396}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 143, 2, 74, "DemoTitle"],
+Cell[CellGroupData[{
+Cell[735, 28, 33, 0, 266, "InitializationSection"],
+Cell[771, 30, 1394, 40, 46, "Input",
+ InitializationCell->True,
+ CellID->605194849],
+Cell[2168, 72, 3545, 66, 46, "Input",
+ InitializationCell->True,
+ CellID->1414776570],
+Cell[5716, 140, 2625, 55, 46, "Input",
+ InitializationCell->True,
+ CellID->630216611],
+Cell[8344, 197, 2762, 59, 46, "Input",
+ InitializationCell->True,
+ CellID->1123461079]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[11143, 261, 29, 0, 188, "ManipulateSection"],
+Cell[CellGroupData[{
+Cell[11197, 265, 2488, 56, 128, "Input"],
+Cell[13688, 323, 4171, 93, 531, "Output",
+ CellID->1644210738]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17908, 422, 36, 0, 166, "ManipulateCaptionSection"],
+Cell[17947, 424, 1743, 32, 39, "ManipulateCaption"],
+Cell[19693, 458, 3135, 77, 80, "ManipulateCaption",
+ CellID->102339826],
+Cell[22831, 537, 743, 21, 41, "ManipulateCaption",
+ CellID->668102822]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23611, 563, 28, 0, 168, "ThumbnailSection"],
+Cell[23642, 565, 4170, 93, 531, "Output",
+ CellID->430303970]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27849, 663, 28, 0, 138, "SnapshotsSection"],
+Cell[27880, 665, 4177, 93, 530, "Output",
+ CellID->1541384341],
+Cell[32060, 760, 4184, 93, 530, "Output",
+ CellID->951385426],
+Cell[36247, 855, 4189, 93, 530, "Output",
+ CellID->1919102867]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40473, 953, 26, 0, 332, "DetailsSection"],
+Cell[40502, 955, 5606, 163, 137, "DetailNotes",
+ CellID->983735429],
+Cell[46111, 1120, 465, 11, 22, "DetailNotes",
+ CellID->1759622838]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46613, 1136, 37, 0, 120, "ControlSuggestionsSection"],
+Cell[46653, 1138, 376, 9, 29, "ControlSuggestions",
+ CellTags->"ResizeImages"],
+Cell[47032, 1149, 678, 16, 29, "ControlSuggestions",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[47713, 1167, 340, 11, 29, "ControlSuggestions",
+ CellTags->"DragLocators"],
+Cell[48056, 1180, 637, 15, 29, "ControlSuggestions",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[48696, 1197, 908, 22, 29, "ControlSuggestions",
+ CellTags->"SliderZoom"],
+Cell[49607, 1221, 369, 9, 29, "ControlSuggestions",
+ CellTags->"GamepadControls"],
+Cell[49979, 1232, 1526, 32, 29, "ControlSuggestions",
+ CellTags->"AutomaticAnimation"],
+Cell[51508, 1266, 908, 21, 29, "ControlSuggestions",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52453, 1292, 30, 0, 152, "SearchTermsSection"],
+Cell[52486, 1294, 143, 3, 21, "SearchTerms",
+ CellID->1771322391],
+Cell[52632, 1299, 146, 3, 21, "SearchTerms",
+ CellID->49627176]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52815, 1307, 31, 0, 138, "RelatedLinksSection"],
+Cell[52849, 1309, 349, 8, 21, "RelatedLinks",
+ CellID->731039197],
+Cell[53201, 1319, 368, 9, 21, "RelatedLinks",
+ CellID->344687695],
+Cell[53572, 1330, 403, 10, 21, "RelatedLinks",
+ CellID->452396709]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54012, 1345, 25, 0, 136, "AuthorSection"],
+Cell[54040, 1347, 391, 11, 21, "Author"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

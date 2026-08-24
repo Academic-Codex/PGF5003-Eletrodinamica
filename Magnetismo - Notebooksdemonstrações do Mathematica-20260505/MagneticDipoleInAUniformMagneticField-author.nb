@@ -1,0 +1,1149 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     46082,       1140]
+NotebookOptionsPosition[     42079,       1016]
+NotebookOutlinePosition[     43659,       1066]
+CellTagsIndexPosition[     43331,       1054]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Magnetic Dipole in a Uniform Magnetic Field ", "DemoTitle",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4531238999458513`*^9, 3.4531239191537724`*^9}, 
+   3.453132075921358*^9, {3.453147273506116*^9, 3.453147290878889*^9}}],
+
+Cell["", "InitializationSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"radius", ",", "x", ",", "y", ",", "Bx", ",", "By", ",", 
+       RowBox[{"bound", "=", 
+        RowBox[{"4", "*", 
+         RowBox[{"10", "^", 
+          RowBox[{"-", "8"}]}]}]}]}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"radius", "=", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"2", " ", 
+          RowBox[{"m", "/", "B"}]}], ")"}], "^", 
+        RowBox[{"(", 
+         RowBox[{"1", "/", "3"}], ")"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Bx", "[", 
+        RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+       RowBox[{"3", " ", "m", "*", "x", "*", 
+        RowBox[{"y", "/", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"x", "^", "2"}], "+", 
+            RowBox[{"y", "^", "2"}]}], ")"}], "^", 
+          RowBox[{"(", 
+           RowBox[{"5", "/", "2"}], ")"}]}]}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"By", "[", 
+        RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+       RowBox[{
+        RowBox[{"m", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"3", " ", 
+            RowBox[{
+             RowBox[{"y", "^", "2"}], "/", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"x", "^", "2"}], "+", 
+                RowBox[{"y", "^", "2"}]}], ")"}], "^", 
+              RowBox[{"(", 
+               RowBox[{"5", "/", "2"}], ")"}]}]}]}], "-", 
+           RowBox[{"1", "/", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"x", "^", "2"}], "+", 
+               RowBox[{"y", "^", "2"}]}], ")"}], "^", 
+             RowBox[{"(", 
+              RowBox[{"3", "/", "2"}], ")"}]}]}]}], ")"}]}], "-", "B"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"Show", "[", 
+       RowBox[{
+        RowBox[{"VectorPlot", "[", 
+         RowBox[{
+          RowBox[{"Normalize", "@", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Evaluate", "@", 
+              RowBox[{"Bx", "[", 
+               RowBox[{"x", ",", "y"}], "]"}]}], ",", 
+             RowBox[{"Evaluate", "@", 
+              RowBox[{"By", "[", 
+               RowBox[{"x", ",", "y"}], "]"}]}]}], "}"}]}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", 
+            RowBox[{"-", "bound"}], ",", "bound"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"y", ",", 
+            RowBox[{"-", "bound"}], ",", "bound"}], "}"}], ",", 
+          RowBox[{"VectorScale", "\[Rule]", "0.05"}], ",", 
+          RowBox[{"VectorColorFunction", "\[Rule]", "\"\<Rainbow\>\""}]}], 
+         "]"}], ",", 
+        RowBox[{"ParametricPlot", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"radius", "*", 
+             RowBox[{"Cos", "[", "t", "]"}]}], ",", 
+            RowBox[{"radius", "*", 
+             RowBox[{"Sin", "[", "t", "]"}]}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "0", ",", 
+            RowBox[{"2", " ", "Pi"}]}], "}"}], ",", 
+          RowBox[{"PlotStyle", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"Thick", ",", "Black"}], "}"}]}]}], "]"}], ",", 
+        RowBox[{"PlotRange", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "bound"}], ",", "bound"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "bound"}], ",", "bound"}], "}"}]}], "}"}]}], ",", 
+        RowBox[{"PlotLabel", "\[Rule]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"p", "\[Equal]", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+           RowBox[{"Row", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<The magnetic field at \>\"", ",", "p", ",", 
+              "\"\< is infinite.\>\""}], "}"}], "]"}], ",", 
+           RowBox[{"Row", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<The magnetic field at \>\"", ",", "p", ",", "\"\< is \>\"", 
+              ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"Bx", "[", 
+                 RowBox[{
+                  RowBox[{"p", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], ",", 
+                  RowBox[{"p", "[", 
+                   RowBox[{"[", "2", "]"}], "]"}]}], "]"}], ",", 
+                RowBox[{"By", "[", 
+                 RowBox[{
+                  RowBox[{"p", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], ",", 
+                  RowBox[{"p", "[", 
+                   RowBox[{"[", "2", "]"}], "]"}]}], "]"}]}], "}"}], ",", 
+              "\"\<.\>\""}], "}"}], "]"}]}], "]"}]}], ",", 
+        RowBox[{"ImageSize", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"450", ",", "400"}], "}"}]}], ",", 
+        RowBox[{"ImagePadding", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"55", ",", "20"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"25", ",", "10"}], "}"}]}], "}"}]}]}], "]"}]}]}], "]"}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m", ",", 
+       RowBox[{
+        RowBox[{"N", "@", "10"}], "^", 
+        RowBox[{"-", "20"}]}], ",", "\"\<magnetic moment (erg/gauss)\>\""}], 
+      "}"}], ",", 
+     RowBox[{"10", "^", 
+      RowBox[{"-", "20"}]}], ",", 
+     RowBox[{"10", "^", 
+      RowBox[{"-", "19"}]}], ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"B", ",", "10000", ",", "\"\<uniform B field (gauss)\>\""}], 
+      "}"}], ",", "10000", ",", "100000", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p", ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}], "}"}], ",", "Locator"}], "}"}], ",",
+    "\[IndentingNewLine]", 
+   RowBox[{"AutorunSequencing", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2"}], "}"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"TrackedSymbols", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.35696210375764*^9, 3.453095935742181*^9, 3.4530965832092133`*^9, {
+   3.453123752556114*^9, 3.453123838470704*^9}, {3.453124033758231*^9, 
+   3.4531240824541006`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`B$$ = 10000, $CellContext`m$$ = 
+    1.*^-20, $CellContext`p$$ = {0, 0}, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`m$$], 1.*^-20, "magnetic moment (erg/gauss)"}, 
+      Rational[1, 100000000000000000000], 
+      Rational[1, 10000000000000000000]}, {{
+       Hold[$CellContext`B$$], 10000, "uniform B field (gauss)"}, 10000, 
+      100000}, {{
+       Hold[$CellContext`p$$], {0, 0}}, Automatic}}, Typeset`size$$ = {
+    675., {295., 305.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`m$38627$$ = 
+    0, $CellContext`B$38628$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`B$$ = 10000, $CellContext`m$$ = 
+        1.*^-20, $CellContext`p$$ = {0, 0}}, "ControllerVariables" :> {
+        Hold[$CellContext`m$$, $CellContext`m$38627$$, 0], 
+        Hold[$CellContext`B$$, $CellContext`B$38628$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`radius$, $CellContext`x$, $CellContext`y$, \
+$CellContext`Bx$, $CellContext`By$, $CellContext`bound$ = 
+         4 10^(-8)}, $CellContext`radius$ = (
+           2 ($CellContext`m$$/$CellContext`B$$))^(1/3); $CellContext`Bx$[
+           Pattern[$CellContext`x$, 
+            Blank[]], 
+           Pattern[$CellContext`y$, 
+            Blank[]]] := ((
+            3 $CellContext`m$$) $CellContext`x$) \
+($CellContext`y$/($CellContext`x$^2 + $CellContext`y$^2)^(5/
+            2)); $CellContext`By$[
+           Pattern[$CellContext`x$, 
+            Blank[]], 
+           Pattern[$CellContext`y$, 
+            Blank[]]] := $CellContext`m$$ (
+            3 ($CellContext`y$^2/($CellContext`x$^2 + $CellContext`y$^2)^(5/
+               2)) - 1/($CellContext`x$^2 + $CellContext`y$^2)^(3/
+             2)) - $CellContext`B$$; Show[
+          VectorPlot[
+           Normalize[{
+             Evaluate[
+              $CellContext`Bx$[$CellContext`x$, $CellContext`y$]], 
+             Evaluate[
+              $CellContext`By$[$CellContext`x$, $CellContext`y$]]}], \
+{$CellContext`x$, -$CellContext`bound$, $CellContext`bound$}, \
+{$CellContext`y$, -$CellContext`bound$, $CellContext`bound$}, VectorScale -> 
+           0.05, VectorColorFunction -> "Rainbow"], 
+          
+          ParametricPlot[{$CellContext`radius$ 
+            Cos[$CellContext`t], $CellContext`radius$ 
+            Sin[$CellContext`t]}, {$CellContext`t, 0, 2 Pi}, 
+           PlotStyle -> {Thick, Black}], 
+          PlotRange -> {{-$CellContext`bound$, $CellContext`bound$}, \
+{-$CellContext`bound$, $CellContext`bound$}}, PlotLabel -> 
+          If[$CellContext`p$$ == {0, 0}, 
+            
+            Row[{"The magnetic field at ", $CellContext`p$$, 
+              " is infinite."}], 
+            Row[{"The magnetic field at ", $CellContext`p$$, " is ", {
+               $CellContext`Bx$[
+                Part[$CellContext`p$$, 1], 
+                Part[$CellContext`p$$, 2]], 
+               $CellContext`By$[
+                Part[$CellContext`p$$, 1], 
+                Part[$CellContext`p$$, 2]]}, "."}]], ImageSize -> {450, 400}, 
+          ImagePadding -> {{55, 20}, {25, 10}}]], 
+      "Specifications" :> {{{$CellContext`m$$, 1.*^-20, 
+          "magnetic moment (erg/gauss)"}, 
+         Rational[1, 100000000000000000000], 
+         Rational[1, 10000000000000000000], Appearance -> 
+         "Labeled"}, {{$CellContext`B$$, 10000, "uniform B field (gauss)"}, 
+         10000, 100000, Appearance -> "Labeled"}, {{$CellContext`p$$, {0, 0}},
+          Automatic, ControlType -> Locator}}, 
+      "Options" :> {AutorunSequencing -> {1, 2}, TrackedSymbols -> True}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{1355., {341.53125, 349.46875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.35696210375764*^9, 3.4531321290779486`*^9},
+ CellID->384730703]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection"],
+
+Cell[TextData[{
+ "This Demonstration allows you to visualize the distortion of a uniform \
+magnetic field due to the presence of a point magnetic dipole. It is \
+interesting that in this configuration, there exists a sphere through which \
+no magnetic flux passes. This occurs at the characteristic radius ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"r", "=", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"2", "m"}], "B"], ")"}], 
+     RowBox[{"1", "/", "3"}]]}], TraditionalForm]], "InlineMath"],
+ " where ",
+ Cell[BoxData[
+  FormBox["m", TraditionalForm]], "InlineMath"],
+ " is the magnetic moment of the dipole (in erg/gauss) and ",
+ Cell[BoxData[
+  FormBox["B", TraditionalForm]], "InlineMath"],
+ " is the magnitude of the uniform magnetic field (in gauss). This result can \
+be derived by setting the sum of the radial contributions from the dipole and \
+external field equal to zero, then solving for ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]], "InlineMath"],
+ "."
+}], "ManipulateCaption",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4530989103465977`*^9, 3.453098997092346*^9}, {
+   3.4531238526791253`*^9, 3.453123883295186*^9}, {3.4531321429061623`*^9, 
+   3.4531322703444777`*^9}, {3.4531473552341433`*^9, 3.453147372031671*^9}, {
+   3.4531474514399757`*^9, 3.453147476673092*^9}, {3.4531475122027273`*^9, 
+   3.453147546241523*^9}, {3.4531475877463818`*^9, 3.4531476534753036`*^9}, {
+   3.453157826690887*^9, 3.453157899771399*^9}, {3.453158030512751*^9, 
+   3.453158064776277*^9}, {3.4531581003728867`*^9, 3.453158248527869*^9}, 
+   3.453158462420361*^9},
+ CellID->97600649],
+
+Cell[TextData[{
+ "You can change the magnetic field by dragging the locator around the plot \
+area. You can also change the magnitudes of ",
+ Cell[BoxData[
+  FormBox["m", TraditionalForm]], "InlineMath"],
+ " and ",
+ Cell[BoxData[
+  FormBox["B", TraditionalForm]], "InlineMath"],
+ " with the sliders."
+}], "ManipulateCaption",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4530989103465977`*^9, 3.453098997084083*^9}, {
+   3.4531238702398815`*^9, 3.453123883309188*^9}, {3.4531322967196465`*^9, 
+   3.453132325547956*^9}, {3.453157958948584*^9, 3.453157964364126*^9}, {
+   3.453157996078012*^9, 3.453158005350045*^9}},
+ CellID->1844085082]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`B$$ = 11200., $CellContext`m$$ = 
+    7.479999999999999*^-20, $CellContext`p$$ = {0, 0}, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`m$$], 7.479999999999999*^-20, 
+       "magnetic moment (erg/gauss)"}, 
+      Rational[1, 100000000000000000000], 
+      Rational[1, 10000000000000000000]}, {{
+       Hold[$CellContext`B$$], 11200., "uniform B field (gauss)"}, 10000, 
+      100000}, {{
+       Hold[$CellContext`p$$], {0, 0}}, Automatic}}, Typeset`size$$ = {
+    675., {295., 305.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`m$139492$$ = 
+    0, $CellContext`B$139493$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`B$$ = 11200., $CellContext`m$$ = 
+        7.479999999999999*^-20, $CellContext`p$$ = {0, 0}}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`m$$, $CellContext`m$139492$$, 0], 
+        Hold[$CellContext`B$$, $CellContext`B$139493$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`radius$, $CellContext`x$, $CellContext`y$, \
+$CellContext`Bx$, $CellContext`By$, $CellContext`bound$ = 
+         4 10^(-8)}, $CellContext`radius$ = (
+           2 ($CellContext`m$$/$CellContext`B$$))^(1/3); $CellContext`Bx$[
+           Pattern[$CellContext`x$, 
+            Blank[]], 
+           Pattern[$CellContext`y$, 
+            Blank[]]] := ((
+            3 $CellContext`m$$) $CellContext`x$) \
+($CellContext`y$/($CellContext`x$^2 + $CellContext`y$^2)^(5/
+            2)); $CellContext`By$[
+           Pattern[$CellContext`x$, 
+            Blank[]], 
+           Pattern[$CellContext`y$, 
+            Blank[]]] := $CellContext`m$$ (
+            3 ($CellContext`y$^2/($CellContext`x$^2 + $CellContext`y$^2)^(5/
+               2)) - 1/($CellContext`x$^2 + $CellContext`y$^2)^(3/
+             2)) - $CellContext`B$$; Show[
+          VectorPlot[
+           Normalize[{
+             Evaluate[
+              $CellContext`Bx$[$CellContext`x$, $CellContext`y$]], 
+             Evaluate[
+              $CellContext`By$[$CellContext`x$, $CellContext`y$]]}], \
+{$CellContext`x$, -$CellContext`bound$, $CellContext`bound$}, \
+{$CellContext`y$, -$CellContext`bound$, $CellContext`bound$}, VectorScale -> 
+           0.05, VectorColorFunction -> "Rainbow"], 
+          
+          ParametricPlot[{$CellContext`radius$ 
+            Cos[$CellContext`t], $CellContext`radius$ 
+            Sin[$CellContext`t]}, {$CellContext`t, 0, 2 Pi}, 
+           PlotStyle -> {Thick, Black}], 
+          PlotRange -> {{-$CellContext`bound$, $CellContext`bound$}, \
+{-$CellContext`bound$, $CellContext`bound$}}, PlotLabel -> 
+          If[$CellContext`p$$ == {0, 0}, 
+            
+            Row[{"The magnetic field at ", $CellContext`p$$, 
+              " is infinite."}], 
+            Row[{"The magnetic field at ", $CellContext`p$$, " is ", {
+               $CellContext`Bx$[
+                Part[$CellContext`p$$, 1], 
+                Part[$CellContext`p$$, 2]], 
+               $CellContext`By$[
+                Part[$CellContext`p$$, 1], 
+                Part[$CellContext`p$$, 2]]}, "."}]], ImageSize -> {450, 400}, 
+          ImagePadding -> {{55, 20}, {25, 10}}]], 
+      "Specifications" :> {{{$CellContext`m$$, 7.479999999999999*^-20, 
+          "magnetic moment (erg/gauss)"}, 
+         Rational[1, 100000000000000000000], 
+         Rational[1, 10000000000000000000], Appearance -> 
+         "Labeled"}, {{$CellContext`B$$, 11200., "uniform B field (gauss)"}, 
+         10000, 100000, Appearance -> "Labeled"}, {{$CellContext`p$$, {0, 0}},
+          Automatic, ControlType -> Locator}}, 
+      "Options" :> {AutorunSequencing -> {1, 2}, TrackedSymbols -> True}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{1372., {341.53125, 349.46875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->848215973]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`B$$ = 10000, $CellContext`m$$ = 
+    1.*^-19, $CellContext`p$$ = {0, 0}, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`m$$], 1.*^-19, "magnetic moment (erg/gauss)"}, 
+      Rational[1, 100000000000000000000], 
+      Rational[1, 10000000000000000000]}, {{
+       Hold[$CellContext`B$$], 10000, "uniform B field (gauss)"}, 10000, 
+      100000}, {{
+       Hold[$CellContext`p$$], {0, 0}}, Automatic}}, Typeset`size$$ = {
+    675., {295., 305.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`m$139550$$ = 
+    0, $CellContext`B$139551$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`B$$ = 10000, $CellContext`m$$ = 
+        1.*^-19, $CellContext`p$$ = {0, 0}}, "ControllerVariables" :> {
+        Hold[$CellContext`m$$, $CellContext`m$139550$$, 0], 
+        Hold[$CellContext`B$$, $CellContext`B$139551$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`radius$, $CellContext`x$, $CellContext`y$, \
+$CellContext`Bx$, $CellContext`By$, $CellContext`bound$ = 
+         4 10^(-8)}, $CellContext`radius$ = (
+           2 ($CellContext`m$$/$CellContext`B$$))^(1/3); $CellContext`Bx$[
+           Pattern[$CellContext`x$, 
+            Blank[]], 
+           Pattern[$CellContext`y$, 
+            Blank[]]] := ((
+            3 $CellContext`m$$) $CellContext`x$) \
+($CellContext`y$/($CellContext`x$^2 + $CellContext`y$^2)^(5/
+            2)); $CellContext`By$[
+           Pattern[$CellContext`x$, 
+            Blank[]], 
+           Pattern[$CellContext`y$, 
+            Blank[]]] := $CellContext`m$$ (
+            3 ($CellContext`y$^2/($CellContext`x$^2 + $CellContext`y$^2)^(5/
+               2)) - 1/($CellContext`x$^2 + $CellContext`y$^2)^(3/
+             2)) - $CellContext`B$$; Show[
+          VectorPlot[
+           Normalize[{
+             Evaluate[
+              $CellContext`Bx$[$CellContext`x$, $CellContext`y$]], 
+             Evaluate[
+              $CellContext`By$[$CellContext`x$, $CellContext`y$]]}], \
+{$CellContext`x$, -$CellContext`bound$, $CellContext`bound$}, \
+{$CellContext`y$, -$CellContext`bound$, $CellContext`bound$}, VectorScale -> 
+           0.05, VectorColorFunction -> "Rainbow"], 
+          
+          ParametricPlot[{$CellContext`radius$ 
+            Cos[$CellContext`t], $CellContext`radius$ 
+            Sin[$CellContext`t]}, {$CellContext`t, 0, 2 Pi}, 
+           PlotStyle -> {Thick, Black}], 
+          PlotRange -> {{-$CellContext`bound$, $CellContext`bound$}, \
+{-$CellContext`bound$, $CellContext`bound$}}, PlotLabel -> 
+          If[$CellContext`p$$ == {0, 0}, 
+            
+            Row[{"The magnetic field at ", $CellContext`p$$, 
+              " is infinite."}], 
+            Row[{"The magnetic field at ", $CellContext`p$$, " is ", {
+               $CellContext`Bx$[
+                Part[$CellContext`p$$, 1], 
+                Part[$CellContext`p$$, 2]], 
+               $CellContext`By$[
+                Part[$CellContext`p$$, 1], 
+                Part[$CellContext`p$$, 2]]}, "."}]], ImageSize -> {450, 400}, 
+          ImagePadding -> {{55, 20}, {25, 10}}]], 
+      "Specifications" :> {{{$CellContext`m$$, 1.*^-19, 
+          "magnetic moment (erg/gauss)"}, 
+         Rational[1, 100000000000000000000], 
+         Rational[1, 10000000000000000000], Appearance -> 
+         "Labeled"}, {{$CellContext`B$$, 10000, "uniform B field (gauss)"}, 
+         10000, 100000, Appearance -> "Labeled"}, {{$CellContext`p$$, {0, 0}},
+          Automatic, ControlType -> Locator}}, 
+      "Options" :> {AutorunSequencing -> {1, 2}, TrackedSymbols -> True}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{1321., {341.53125, 349.46875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->78038048],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`B$$ = 82400., $CellContext`m$$ = 
+    1.*^-20, $CellContext`p$$ = {0, 0}, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`m$$], 1.*^-20, "magnetic moment (erg/gauss)"}, 
+      Rational[1, 100000000000000000000], 
+      Rational[1, 10000000000000000000]}, {{
+       Hold[$CellContext`B$$], 82400., "uniform B field (gauss)"}, 10000, 
+      100000}, {{
+       Hold[$CellContext`p$$], {0, 0}}, Automatic}}, Typeset`size$$ = {
+    675., {295., 305.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`m$139608$$ = 
+    0, $CellContext`B$139609$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`B$$ = 82400., $CellContext`m$$ = 
+        1.*^-20, $CellContext`p$$ = {0, 0}}, "ControllerVariables" :> {
+        Hold[$CellContext`m$$, $CellContext`m$139608$$, 0], 
+        Hold[$CellContext`B$$, $CellContext`B$139609$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`radius$, $CellContext`x$, $CellContext`y$, \
+$CellContext`Bx$, $CellContext`By$, $CellContext`bound$ = 
+         4 10^(-8)}, $CellContext`radius$ = (
+           2 ($CellContext`m$$/$CellContext`B$$))^(1/3); $CellContext`Bx$[
+           Pattern[$CellContext`x$, 
+            Blank[]], 
+           Pattern[$CellContext`y$, 
+            Blank[]]] := ((
+            3 $CellContext`m$$) $CellContext`x$) \
+($CellContext`y$/($CellContext`x$^2 + $CellContext`y$^2)^(5/
+            2)); $CellContext`By$[
+           Pattern[$CellContext`x$, 
+            Blank[]], 
+           Pattern[$CellContext`y$, 
+            Blank[]]] := $CellContext`m$$ (
+            3 ($CellContext`y$^2/($CellContext`x$^2 + $CellContext`y$^2)^(5/
+               2)) - 1/($CellContext`x$^2 + $CellContext`y$^2)^(3/
+             2)) - $CellContext`B$$; Show[
+          VectorPlot[
+           Normalize[{
+             Evaluate[
+              $CellContext`Bx$[$CellContext`x$, $CellContext`y$]], 
+             Evaluate[
+              $CellContext`By$[$CellContext`x$, $CellContext`y$]]}], \
+{$CellContext`x$, -$CellContext`bound$, $CellContext`bound$}, \
+{$CellContext`y$, -$CellContext`bound$, $CellContext`bound$}, VectorScale -> 
+           0.05, VectorColorFunction -> "Rainbow"], 
+          
+          ParametricPlot[{$CellContext`radius$ 
+            Cos[$CellContext`t], $CellContext`radius$ 
+            Sin[$CellContext`t]}, {$CellContext`t, 0, 2 Pi}, 
+           PlotStyle -> {Thick, Black}], 
+          PlotRange -> {{-$CellContext`bound$, $CellContext`bound$}, \
+{-$CellContext`bound$, $CellContext`bound$}}, PlotLabel -> 
+          If[$CellContext`p$$ == {0, 0}, 
+            
+            Row[{"The magnetic field at ", $CellContext`p$$, 
+              " is infinite."}], 
+            Row[{"The magnetic field at ", $CellContext`p$$, " is ", {
+               $CellContext`Bx$[
+                Part[$CellContext`p$$, 1], 
+                Part[$CellContext`p$$, 2]], 
+               $CellContext`By$[
+                Part[$CellContext`p$$, 1], 
+                Part[$CellContext`p$$, 2]]}, "."}]], ImageSize -> {450, 400}, 
+          ImagePadding -> {{55, 20}, {25, 10}}]], 
+      "Specifications" :> {{{$CellContext`m$$, 1.*^-20, 
+          "magnetic moment (erg/gauss)"}, 
+         Rational[1, 100000000000000000000], 
+         Rational[1, 10000000000000000000], Appearance -> 
+         "Labeled"}, {{$CellContext`B$$, 82400., "uniform B field (gauss)"}, 
+         10000, 100000, Appearance -> "Labeled"}, {{$CellContext`p$$, {0, 0}},
+          Automatic, ControlType -> Locator}}, 
+      "Options" :> {AutorunSequencing -> {1, 2}, TrackedSymbols -> True}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{1321., {341.53125, 349.46875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->138404377],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`B$$ = 10000, $CellContext`m$$ = 
+    4.2219999999999997`*^-20, $CellContext`p$$ = {0, 0}, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`m$$], 4.2219999999999997`*^-20, 
+       "magnetic moment (erg/gauss)"}, 
+      Rational[1, 100000000000000000000], 
+      Rational[1, 10000000000000000000]}, {{
+       Hold[$CellContext`B$$], 10000, "uniform B field (gauss)"}, 10000, 
+      100000}, {{
+       Hold[$CellContext`p$$], {0, 0}}, Automatic}}, Typeset`size$$ = {
+    675., {295., 305.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`m$139666$$ = 
+    0, $CellContext`B$139667$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`B$$ = 10000, $CellContext`m$$ = 
+        4.2219999999999997`*^-20, $CellContext`p$$ = {0, 0}}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`m$$, $CellContext`m$139666$$, 0], 
+        Hold[$CellContext`B$$, $CellContext`B$139667$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`radius$, $CellContext`x$, $CellContext`y$, \
+$CellContext`Bx$, $CellContext`By$, $CellContext`bound$ = 
+         4 10^(-8)}, $CellContext`radius$ = (
+           2 ($CellContext`m$$/$CellContext`B$$))^(1/3); $CellContext`Bx$[
+           Pattern[$CellContext`x$, 
+            Blank[]], 
+           Pattern[$CellContext`y$, 
+            Blank[]]] := ((
+            3 $CellContext`m$$) $CellContext`x$) \
+($CellContext`y$/($CellContext`x$^2 + $CellContext`y$^2)^(5/
+            2)); $CellContext`By$[
+           Pattern[$CellContext`x$, 
+            Blank[]], 
+           Pattern[$CellContext`y$, 
+            Blank[]]] := $CellContext`m$$ (
+            3 ($CellContext`y$^2/($CellContext`x$^2 + $CellContext`y$^2)^(5/
+               2)) - 1/($CellContext`x$^2 + $CellContext`y$^2)^(3/
+             2)) - $CellContext`B$$; Show[
+          VectorPlot[
+           Normalize[{
+             Evaluate[
+              $CellContext`Bx$[$CellContext`x$, $CellContext`y$]], 
+             Evaluate[
+              $CellContext`By$[$CellContext`x$, $CellContext`y$]]}], \
+{$CellContext`x$, -$CellContext`bound$, $CellContext`bound$}, \
+{$CellContext`y$, -$CellContext`bound$, $CellContext`bound$}, VectorScale -> 
+           0.05, VectorColorFunction -> "Rainbow"], 
+          
+          ParametricPlot[{$CellContext`radius$ 
+            Cos[$CellContext`t], $CellContext`radius$ 
+            Sin[$CellContext`t]}, {$CellContext`t, 0, 2 Pi}, 
+           PlotStyle -> {Thick, Black}], 
+          PlotRange -> {{-$CellContext`bound$, $CellContext`bound$}, \
+{-$CellContext`bound$, $CellContext`bound$}}, PlotLabel -> 
+          If[$CellContext`p$$ == {0, 0}, 
+            
+            Row[{"The magnetic field at ", $CellContext`p$$, 
+              " is infinite."}], 
+            Row[{"The magnetic field at ", $CellContext`p$$, " is ", {
+               $CellContext`Bx$[
+                Part[$CellContext`p$$, 1], 
+                Part[$CellContext`p$$, 2]], 
+               $CellContext`By$[
+                Part[$CellContext`p$$, 1], 
+                Part[$CellContext`p$$, 2]]}, "."}]], ImageSize -> {450, 400}, 
+          ImagePadding -> {{55, 20}, {25, 10}}]], 
+      "Specifications" :> {{{$CellContext`m$$, 4.2219999999999997`*^-20, 
+          "magnetic moment (erg/gauss)"}, 
+         Rational[1, 100000000000000000000], 
+         Rational[1, 10000000000000000000], Appearance -> 
+         "Labeled"}, {{$CellContext`B$$, 10000, "uniform B field (gauss)"}, 
+         10000, 100000, Appearance -> "Labeled"}, {{$CellContext`p$$, {0, 0}},
+          Automatic, ControlType -> Locator}}, 
+      "Options" :> {AutorunSequencing -> {1, 2}, TrackedSymbols -> True}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{1346., {341.53125, 349.46875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->365742218]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "DetailsSection"],
+
+Cell[TextData[{
+ "The idea for this Demonstration was derived from E. M. Purcell, ",
+ StyleBox["Electricity and Magnetism",
+  FontSlant->"Italic"],
+ ", New York: McGraw-Hill, 1985. "
+}], "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4530975948598213`*^9, 3.453097609271875*^9}, {
+   3.453097671225401*^9, 3.453097674793507*^9}, {3.453098173500226*^9, 
+   3.4530981886195707`*^9}, {3.453098852472808*^9, 3.4530989042512913`*^9}, {
+   3.4531240107079268`*^9, 3.4531240138172374`*^9}, {3.4531329158954844`*^9, 
+   3.4531329487706947`*^9}, {3.453133045833816*^9, 3.4531330900997243`*^9}},
+ CellID->1299668525]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Resize Images"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"ResizeImages"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Rotate and Zoom in 3D"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" on Mac) and drag up and down to zoom.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"RotateAndZoomIn3D"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Drag Locators"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.4530972838674994`*^9},
+ FontFamily->"Verdana",
+ CellTags->"DragLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Create and Delete Locators"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"CreateAndDeleteLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Slider Zoom"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" to make ever finer adjustments.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"SliderZoom"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Gamepad Controls"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9},
+ FontFamily->"Verdana",
+ CellTags->"GamepadControls"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Automatic Animation"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0, CellBaseline -> Baseline], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.4531323489074807`*^9},
+ FontFamily->"Verdana",
+ CellTags->"AutomaticAnimation"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Bookmark Animation"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SearchTermsSection"],
+
+Cell["dipole", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.453097680719956*^9, 3.4530976828733883`*^9}, {
+   3.453097713052575*^9, 3.4530977258743267`*^9}, {3.4530981248355*^9, 
+   3.4530981383702917`*^9}, {3.453123977095566*^9, 3.4531239799938555`*^9}},
+ CellID->1472726038],
+
+Cell["magnetism", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.453097680719956*^9, 3.4530976828733883`*^9}, {
+   3.453097713052575*^9, 3.4530977258743267`*^9}, {3.4530981248355*^9, 
+   3.4530981383702917`*^9}, {3.453123977095566*^9, 3.453123979992855*^9}},
+ CellID->286277188],
+
+Cell["magnetic moment", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.453097680719956*^9, 3.4530976828733883`*^9}, {
+   3.453097713052575*^9, 3.4530977258743267`*^9}, {3.4530981248355*^9, 
+   3.4530981383702917`*^9}, {3.453123977095566*^9, 3.453123982689125*^9}},
+ CellID->821093072],
+
+Cell["magnetic field", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.453097680719956*^9, 3.4530976828733883`*^9}, {
+   3.453097713052575*^9, 3.4530977258743267`*^9}, {3.4530981248355*^9, 
+   3.4530981383702917`*^9}, {3.453123977095566*^9, 3.453123985228379*^9}},
+ CellID->158018486],
+
+Cell["field lines", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.453097680719956*^9, 3.4530976828733883`*^9}, {
+   3.453097713052575*^9, 3.4530977258743267`*^9}, {3.4530981248355*^9, 
+   3.4530981383702917`*^9}, {3.453123977095566*^9, 3.4531239874526014`*^9}},
+ CellID->161036732],
+
+Cell["electromagnetism", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.453097680719956*^9, 3.4530976828733883`*^9}, {
+   3.453097713052575*^9, 3.4530977258743267`*^9}, {3.4530981248355*^9, 
+   3.4530981383702917`*^9}, {3.453123977095566*^9, 3.453123987450601*^9}},
+ CellID->250119394]
+}, Open  ]],
+
+Cell["", "RelatedLinksSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection"],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["Ernest Lee",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Ernest+Lee"], 
+    None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Ernest+Lee"],
+ " and ",
+ ButtonBox["Arvind Kannan",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Arvind+Kannan"],
+     None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Arvind+Kannan"]
+}], "Author",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4530977312124767`*^9, 3.453097735178461*^9}, {
+   3.4531239295138083`*^9, 3.4531239742652826`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{828, 596},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"7.0 for Mac OS X x86 (32-bit) (January 4, 2009)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "AutomaticAnimation"->{
+  Cell[36958, 881, 1528, 32, 42, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[38489, 915, 908, 21, 42, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]},
+ "CreateAndDeleteLocators"->{
+  Cell[35099, 830, 637, 15, 42, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
+ "DragLocators"->{
+  Cell[34692, 816, 404, 12, 42, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "GamepadControls"->{
+  Cell[36586, 870, 369, 9, 42, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "ResizeImages"->{
+  Cell[33696, 788, 312, 8, 42, "ControlSuggestions",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[34011, 798, 678, 16, 42, "ControlSuggestions",
+   CellTags->"RotateAndZoomIn3D"]},
+ "SliderZoom"->{
+  Cell[35739, 847, 844, 21, 42, "ControlSuggestions",
+   CellTags->"SliderZoom"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"AutomaticAnimation", 42446, 1027},
+ {"BookmarkAnimation", 42562, 1030},
+ {"CreateAndDeleteLocators", 42682, 1033},
+ {"DragLocators", 42797, 1036},
+ {"GamepadControls", 42904, 1039},
+ {"ResizeImages", 43010, 1042},
+ {"RotateAndZoomIn3D", 43118, 1045},
+ {"SliderZoom", 43225, 1048}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 231, 3, 157, "DemoTitle"],
+Cell[801, 27, 33, 0, 399, "InitializationSection"],
+Cell[CellGroupData[{
+Cell[859, 31, 29, 0, 267, "ManipulateSection"],
+Cell[CellGroupData[{
+Cell[913, 35, 6509, 177, 589, "Input"],
+Cell[7425, 214, 4619, 94, 709, "Output",
+ CellID->384730703]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12093, 314, 36, 0, 249, "ManipulateCaptionSection"],
+Cell[12132, 316, 1621, 35, 205, "ManipulateCaption",
+ CellID->97600649],
+Cell[13756, 353, 638, 15, 57, "ManipulateCaption",
+ CellID->1844085082]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14431, 373, 28, 0, 252, "ThumbnailSection"],
+Cell[14462, 375, 4637, 95, 709, "Output",
+ CellID->848215973]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19136, 475, 28, 0, 207, "SnapshotsSection"],
+Cell[19167, 477, 4557, 93, 709, "Output",
+ CellID->78038048],
+Cell[23727, 572, 4562, 93, 709, "Output",
+ CellID->138404377],
+Cell[28292, 667, 4641, 95, 709, "Output",
+ CellID->365742218]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32970, 767, 26, 0, 498, "DetailsSection"],
+Cell[32999, 769, 620, 12, 56, "DetailNotes",
+ CellID->1299668525]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33656, 786, 37, 0, 180, "ControlSuggestionsSection"],
+Cell[33696, 788, 312, 8, 42, "ControlSuggestions",
+ CellTags->"ResizeImages"],
+Cell[34011, 798, 678, 16, 42, "ControlSuggestions",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[34692, 816, 404, 12, 42, "ControlSuggestions",
+ CellTags->"DragLocators"],
+Cell[35099, 830, 637, 15, 42, "ControlSuggestions",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[35739, 847, 844, 21, 42, "ControlSuggestions",
+ CellTags->"SliderZoom"],
+Cell[36586, 870, 369, 9, 42, "ControlSuggestions",
+ CellTags->"GamepadControls"],
+Cell[36958, 881, 1528, 32, 42, "ControlSuggestions",
+ CellTags->"AutomaticAnimation"],
+Cell[38489, 915, 908, 21, 42, "ControlSuggestions",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39434, 941, 30, 0, 228, "SearchTermsSection"],
+Cell[39467, 943, 292, 5, 33, "SearchTerms",
+ CellID->1472726038],
+Cell[39762, 950, 292, 5, 33, "SearchTerms",
+ CellID->286277188],
+Cell[40057, 957, 298, 5, 33, "SearchTerms",
+ CellID->821093072],
+Cell[40358, 964, 297, 5, 70, "SearchTerms",
+ CellID->158018486],
+Cell[40658, 971, 296, 5, 70, "SearchTerms",
+ CellID->161036732],
+Cell[40957, 978, 299, 5, 70, "SearchTerms",
+ CellID->250119394]
+}, Open  ]],
+Cell[41271, 986, 31, 0, 70, "RelatedLinksSection"],
+Cell[CellGroupData[{
+Cell[41327, 990, 25, 0, 70, "AuthorSection"],
+Cell[41355, 992, 696, 20, 70, "Author"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
